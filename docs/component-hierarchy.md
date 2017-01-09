@@ -5,68 +5,93 @@
 
 **HomeContainer**
  - Home
- - Sidebar
+ - TopBar
+ - SignUpButton
+ - BottomBar
 
-**NotesContainer**
- - NotesHeader
-  * NoteIndex
+**TopBar**
+ - ListsButton
+  * ListIndex
+ - RecipeButton
+  * RecipeIndex
+ - ProfileButton
+ - CreateButton
+  - NewListContainer
 
-**NotebookContainer**
- - NotebookHeader
-  + NoteIndex
+**ListsContainer**
+ - TopBar
+ - ListIndex
+ - CreateListButton/Link
+
+**ListContainer**
+- TopBar
+- ListHeader
+- ListColumns
+ * ColumnContainer
+- RecipeContainer
+
+**ColumnContainer**
+  * ColumnHeader
+  * GItemIndex
+  * AddCardButton ("to_buy col only")
+
+**GItemDetailContainer**
+ - GItemHeader
+ - ExpirationDateForm
+ - DeleteButton
+
+ **ProfileContainer**
+ - TopBar
+ - ProfileForm
+ - StatsContainer
+ - SignOutButton
+
+ **StatsContainer**
+ - TotalItemsExpired
+ - NumberofItemsUsed
 
 **SearchResultsContainer**
  - Search
- - NoteIndex
+ - ListIndex
 
-**TagContainer**
- - NotebookHeader
-  + NoteIndex
+**NewGItemContainer**
+  - GItemHeader
+  - ExpirationDateForm (blocked till GItem moves to "Bought")
+  - NewGItemButton
 
-**NoteIndex**
- - NoteIndexItem
-  + NoteDetail
-    + NoteTools
-    - NotebookSearch
-    - Tags
-      - Tag
-    * Note
+**NewListContainer**
+ - ListHeader
+ - CreateListButton
 
-**NewNoteContainer**
- - NewNote
-  - RTETools
-  - NewNoteButton
-
-**Search**
-
-**NewNotebook**
- - NewNotebook
-
-**NewTag**
- - NewTag
-
-**NotebookSearch**
- + AutoSearch
- * AutoSearchResults
-
-**TagsSearch**
- + AutoSearch
- * AutoSearchResults
+ **RecipeContainer**
+ - RecipesHeader
+ - RecipeIndex
 
 ## Routes
-
 |Path   | Component   |
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
+| "/api/lists" | "ListsContainer" |
+| "/api/lists/list/:listId" | "ListContainer" |
+| "/api/lists/list/:listId/column/:columnID" | "ColumnContainer" |
+| "/api/lists/list/:listId/column/:columnId/gitem/:gitemId" | "GItemContainer" |
+| "/api/new_list" | "NewListContainer"
+| "/api/lists/list/:boardId/column/:columnId/new_gitem" | "NewGItemContainer" |
+| "/api/:userId" | "ProfileContainer" |
 | "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/api/search-results" | "SearchResultsContainer"
+
+|Path   | Component   |
+|-------|-------------|
+| "/sign-up" | "AuthFormContainer" |
+| "/sign-in" | "AuthFormContainer" |
+| "/" | "HomeContainer" |
+| "/api/:userid" | "ProfileContainer" |
+| "/api/lists" | "ListsContainer" |
+| "/api/list/:listId/" | "ListContainer" |
+| "/new-list" | "NewListContainer" |
+| "/new-gitem" | "NewGItemContainer" |
+| "/search" | "Search" |
+| "/api/search-results" | "SearchResultsContainer"

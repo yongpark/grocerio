@@ -28,13 +28,9 @@
 - `PATCH /api/lists/:id`
 - `DELETE /api/lists/:id`
 
-### Columns
-- `GET /api/columns/:id/groceries`
-
 ### Grocery_item
 
 - `GET /api/groceries/:id`
 - `POST /api/groceries/:id`
 - `GET /api/groceries/:id`
 - `DELETE /api/groceries/:id`
-
