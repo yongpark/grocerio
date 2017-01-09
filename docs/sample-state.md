@@ -2,34 +2,36 @@
 {
   currentUser: {
     id: 1,
-    username: "app-academy"
+    username: "Yeezus"
   },
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
     createNote: {errors: ["body can't be blank"]}
   },
-  notes: {
+  list: {
     1: {
-      title: "Sample State",
-      body: "is useful to plan",
-      author_id: 1,
-      notebook_id: 1
-      tags: {
-        1: {
-          id: 1
-          name: "Coding"
-        }
+      title: "Kanye's Weekly Grocery List",
       }
     }
   },
-  notebooks: {
+  column:{
     1: {
-      title: "Redux",
-      author_id: 1,
-      description: "is cool"
+      title: "Buy",
+      user_id: 1,
+      list_id: 1,
+      column_type: "buy"
     }
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
+  grocery_item: {
+    1: {
+      title: "Soylent",
+      user_id: 1,
+      list_id: 1,
+      column_id: 1,
+      expire_date: "10-20-2020",
+      expired: null
+    }
+  }
 }
 ```
