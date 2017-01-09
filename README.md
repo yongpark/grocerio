@@ -15,10 +15,9 @@ Grocer.io is a web application based on Trello built using Ruby on Rails and Rea
 - [ ] New account creation, login, and guest/demo login
 - [ ] Create new grocery lists
 - [ ] Add grocery items to the "To Buy" column.
-- [ ] Click grocery item pops up modal to allowing users to delete grocery items from any* column.
+- [ ] Click grocery item pops up modal to allowing users to delete grocery items from any* column
 - [ ] Users can drag and drop card from the "To Buy" and drop them into the "Bought" column + add an expiration date. They can then move items from the "Bought" column to the "Used column"
-- [ ] Items that expire will automatically move to the "Expired" column.
-- [ ] Spoonacular API displays recipes with "soon-to-expire" (< x days left) ingredients.
+- [ ] Spoonacular API displays recipes with "soon-to-expire" (< x days left) ingredients
 - [ ] Production README [sample](docs/production_readme.md)
 
 ## Design Docs
@@ -62,7 +61,7 @@ the API.
 **objective:** Add infinite scroll to Notes Index
 
 ### Bonus Features (TBD)
-- [ ] Search notes by content
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+- [ ] Items that expire will automatically move to the "Expired" column
+- [ ] Recipe pages that aggregates expiring items on all lists
+- [ ] User profile page w/ stats displaying # of items that user let expire
+- [ ] Search for lists
