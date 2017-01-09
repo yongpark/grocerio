@@ -40,13 +40,13 @@
  - ExpirationDateForm
  - DeleteButton
 
- **ProfileContainer**
+**ProfileContainer**
  - TopBar
  - ProfileForm
  - StatsContainer
  - SignOutButton
 
- **StatsContainer**
+**StatsContainer**
  - TotalItemsExpired
  - NumberofItemsUsed
 
@@ -63,7 +63,7 @@
  - ListHeader
  - CreateListButton
 
- **RecipeContainer**
+**RecipeContainer**
  - RecipesHeader
  - RecipeIndex
 
@@ -80,18 +80,5 @@
 | "/api/new_list" | "NewListContainer"
 | "/api/lists/list/:boardId/column/:columnId/new_gitem" | "NewGItemContainer" |
 | "/api/:userId" | "ProfileContainer" |
-| "/search" | "Search" |
-| "/api/search-results" | "SearchResultsContainer"
-
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/" | "HomeContainer" |
-| "/api/:userid" | "ProfileContainer" |
-| "/api/lists" | "ListsContainer" |
-| "/api/list/:listId/" | "ListContainer" |
-| "/new-list" | "NewListContainer" |
-| "/new-gitem" | "NewGItemContainer" |
 | "/search" | "Search" |
 | "/api/search-results" | "SearchResultsContainer"
