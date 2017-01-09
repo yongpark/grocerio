@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://grocero.herokuapp.com/
 [trello]: https://trello.com/b/5o8wTudK/grocerio
 
 ## Minimum Viable Product
