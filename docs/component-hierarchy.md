@@ -74,11 +74,7 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/api/lists" | "ListsContainer" |
-| "/api/lists/list/:listId" | "ListContainer" |
-| "/api/lists/list/:listId/column/:columnID" | "ColumnContainer" |
-| "/api/lists/list/:listId/column/:columnId/gitem/:gitemId" | "GItemContainer" |
-| "/api/new_list" | "NewListContainer"
-| "/api/lists/list/:boardId/column/:columnId/new_gitem" | "NewGItemContainer" |
+| "/api/lists/:listId" | "ListContainer" |
 | "/api/:userId" | "ProfileContainer" |
 | "/search" | "Search" |
 | "/api/search-results" | "SearchResultsContainer"

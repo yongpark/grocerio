@@ -19,7 +19,6 @@ title       | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
 list_id     | integer   | not null, foreign key (references lists), indexed
 title       | string    | not null
 column_type | string    | not null (to_buy, bought, used, expired)
@@ -30,8 +29,6 @@ column name    | data type | details
 ---------------|-----------|-----------------------
 id             | integer   | not null, primary key
 title          | string    | not null
-user_id        | integer   | not null, foreign key (references users), indexed
-list_id        | integer   | not null, foreign key (references lists), indexed
 column_id      | integer   | not null, foregin key (references columns), indexed
 expire_date    | integer   | not null
-expired        | binary    | not null, default: false 
+expired        | binary    | not null, default: false
