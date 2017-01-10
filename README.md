@@ -1,4 +1,4 @@
-# Grocer.io
+# Grocero
 
 [Heroku link][heroku]
 
