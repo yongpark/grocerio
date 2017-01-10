@@ -13,6 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store}/>, root);
+  ReactDOM.render(<h1>grcoero</h1>, root);
   window.store = store;
 });
