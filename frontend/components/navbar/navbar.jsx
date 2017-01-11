@@ -25,7 +25,7 @@ class NavBar extends React.Component{
   render(){
     const handleClick = url => () => hashHistory.push(url);
     return(
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)} className="navbar">
         <AppBar title="Grocero">
           <SessionButtonContainer/>
           <SessionFormContainer/>
