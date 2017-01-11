@@ -25,6 +25,7 @@ class NavBar extends React.Component{
     return(
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <AppBar title="Grocero">
+
         </AppBar>
       </MuiThemeProvider>
     );
