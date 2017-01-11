@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -12,6 +13,13 @@ class SessionForm extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleToggleFormType = this.handleToggleFormType.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = this.state;
+    this.state.formType === 'login' ? this.props.login({user}) : this.props.signup({user});
   }
 
   handleToggleFormType(e) {
@@ -23,9 +31,20 @@ class SessionForm extends React.Component{
     });
   }
 
+  handleGuestLogin(e){
+    e.preventDefault();
+    const user ={
+      username: 'Guest',
+      password: 'password'
+    };
+    this.props.login({user});
+  }
+
   update(field){
     return e => this.setState({[field]: e.currentTarget.value});
   }
+
+  render()
 }
 
 export default SessionForm;

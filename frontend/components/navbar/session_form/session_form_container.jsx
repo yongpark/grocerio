@@ -3,10 +3,10 @@ import SessionForm from './session_form';
 import { login, logout, signup } from '../../../actions/session_actions';
 import { closeAuthModal, openAuthModal } from '../../../actions/modal_actions';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.session.errors,
-  openAuthModal: state.modals.auth
+  authModalOpen: state.modals.auth
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
