@@ -3,8 +3,7 @@
 .main-text{
   font-family: 'Roboto', 'san-serif';
   margin: auto;
-  position: relative;
-  top: 10%;
+  padding-top: 10%;
   width: 780px;
   font-size: 60px;
   color: white;
@@ -15,10 +14,18 @@
 .main-description{
   font-family: 'Roboto', 'san-serif';
   margin: auto;
-  position: relative;
-  top: 20%;
+  padding-top: 5%;
   width: 780px;
   font-size: 40px;
   color: white;
   text-align: center;
+}
+
+.splash-session-button{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: 42%;
 }

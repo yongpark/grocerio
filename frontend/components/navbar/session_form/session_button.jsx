@@ -14,7 +14,7 @@ class SessionButton extends React.Component{
   render(){
     if(this.props.session.currentUser){
       return(
-        <div className="splash-session-button">
+        <div>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <RaisedButton
               label="logout"
@@ -25,7 +25,7 @@ class SessionButton extends React.Component{
     }
     else{
       return(
-        <div className="splash-session-button">
+        <div>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <RaisedButton label="login"
               onClick={this.props.openAuthModal}>
