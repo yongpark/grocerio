@@ -4,16 +4,14 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
 
-class SessionForm extends React.Component{
+class SplashSessionForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       username: "",
       password: "",
-      formType: 'login'
+      splashFormType: 'signup'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleToggleFormType = this.handleToggleFormType.bind(this);
@@ -23,14 +21,14 @@ class SessionForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.state.formType === 'login' ? this.props.login({user}) : this.props.signup({user});
+    this.state.splashFormType === 'signup' ?  this.props.signup({user}) : this.props.login({user});
   }
 
   handleToggleFormType(e) {
     e.preventDefault();
     this.setState({
-      formType: this.state.formType === 'login'
-        ? 'signup' : 'login'
+      splashFormType: this.state.splashFormType === 'signup'
+        ? 'login' : 'signup'
     });
   }
 
@@ -51,20 +49,20 @@ class SessionForm extends React.Component{
     let buttonName,
         linkText,
         guestLogin;
-    if (this.state.formType === "login"){
-      buttonName = "Log In";
-      linkText = "Sign Up";
+    if (this.state.splashFormType === "signup"){
+      buttonName = "Sign Up";
+      linkText = "Log In";
       guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin}/>);
     }
     else {
-      buttonName = "Sign Up";
-      linkText = "Log In";
+      buttonName = "Log In";
+      linkText = "Sign Up";
       guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin}/>);
     }
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={buttonName}>
+          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={18238581923981}>
             <form onSubmit={this.handleSubmit}>
               <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : "Username is required"} value={this.state.username}  onChange={this.update("username")} fullWidth={true}/>
               <br/>
@@ -83,4 +81,4 @@ class SessionForm extends React.Component{
   }
 }
 
-export default SessionForm;
+export default SplashSessionForm;

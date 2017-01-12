@@ -5,8 +5,13 @@ html, body, main {
 
 .home {
   height: calc(100vh - 64px);
-  background-image: url('http://res.cloudinary.com/yongpark/image/upload/v1484161896/food_fa0ezm.jpg');
+  background-image: url('http://res.cloudinary.com/yongpark/image/upload/c_scale,w_1920/v1484179204/pexels-photo-59016_zfavrq.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+
+
+.splash-session-button{
+  margin: auto;
 }
