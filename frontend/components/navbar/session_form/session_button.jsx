@@ -8,7 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 class SessionButton extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
   }
 
   render(){
