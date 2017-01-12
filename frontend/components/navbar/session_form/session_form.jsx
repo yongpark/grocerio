@@ -13,7 +13,7 @@ class SessionForm extends React.Component{
     this.state = {
       username: "",
       password: "",
-      formType: ''
+      formType: 'login'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleToggleFormType = this.handleToggleFormType.bind(this);

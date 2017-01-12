@@ -6,7 +6,8 @@ import { closeAuthModal, openAuthModal } from '../../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.session.errors,
-  authModalOpen: state.modals.auth
+  authModalOpen: state.modals.auth,
+  splashSessionFormType: 'signup'
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
