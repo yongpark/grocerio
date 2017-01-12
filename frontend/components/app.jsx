@@ -8,9 +8,6 @@ const App = ({children}) => (
     <section>
       <NavBarContainer/>
     </section>
-    <section>
-      <SplashContainer/>
-    </section>
     {children}
   </div>
 );

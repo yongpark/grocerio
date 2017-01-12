@@ -6,14 +6,13 @@ import { closeAuthModal, openAuthModal } from '../../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.session.errors,
-  authModalOpen: state.modals.auth,
-  sessionFormType: 'login'
+  authModalOpen: state.modals.login,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   login: user => dispatch(login(user)),
   signup: user => dispatch(signup(user)),
-  closeAuthModal: () => dispatch(closeAuthModal())
+  closeAuthModal: () => dispatch(closeAuthModal('login'))
 });
 
 export default connect(

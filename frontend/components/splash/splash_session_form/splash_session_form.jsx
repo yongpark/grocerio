@@ -62,7 +62,7 @@ class SplashSessionForm extends React.Component{
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeSplashAuthModal} modal={false} title={splashButtonName}>
+          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={splashButtonName}>
             <form onSubmit={this.handleSubmit}>
               <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : "Username is required"} value={this.state.username}  onChange={this.update("username")} fullWidth={true}/>
               <br/>

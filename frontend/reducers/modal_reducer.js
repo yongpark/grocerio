@@ -11,11 +11,11 @@ export default (state = _defaultState, action) => {
     switch (action.type) {
         case OPEN_AUTH_MODAL:
             return merge({}, state, {
-                auth: true
+                [action.form]: true
             });
         case CLOSE_AUTH_MODAL:
             return merge({}, state, {
-                auth: false
+                [action.form]: false
             });
         default:
             return state;

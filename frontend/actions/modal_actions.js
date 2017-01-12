@@ -3,9 +3,10 @@ export const CLOSE_AUTH_MODAL = "CLOSE_AUTH_MODAL";
 
 export const openAuthModal = (form) => ({
   type: OPEN_AUTH_MODAL,
-  form: form
+  form
 });
 
-export const closeAuthModal = () => ({
-  type: CLOSE_AUTH_MODAL
+export const closeAuthModal = (form) => ({
+  type: CLOSE_AUTH_MODAL,
+  form
 });
