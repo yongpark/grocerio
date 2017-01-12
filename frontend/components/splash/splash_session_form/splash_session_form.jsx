@@ -11,7 +11,7 @@ class SplashSessionForm extends React.Component{
     this.state = {
       username: "",
       password: "",
-      splashFormType: 'signup'
+      splashFormType: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleToggleFormType = this.handleToggleFormType.bind(this);
@@ -46,23 +46,23 @@ class SplashSessionForm extends React.Component{
   }
 
   render(){
-    let buttonName,
-        linkText,
+    let splashButtonName,
+        splashLinkText,
         guestLogin;
     if (this.state.splashFormType === "signup"){
-      buttonName = "Sign Up";
-      linkText = "Log In";
+      splashButtonName = "Sign Up";
+      splashLinkText = "Log In";
       guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin}/>);
     }
     else {
-      buttonName = "Log In";
-      linkText = "Sign Up";
+      splashButtonName = "Log In";
+      splashLinkText = "Sign Up";
       guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin}/>);
     }
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={18238581923981}>
+          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={splashButtonName}>
             <form onSubmit={this.handleSubmit}>
               <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : "Username is required"} value={this.state.username}  onChange={this.update("username")} fullWidth={true}/>
               <br/>
@@ -72,7 +72,7 @@ class SplashSessionForm extends React.Component{
             </form>
             <section>
               {guestLogin}
-              <FlatButton label={linkText} secondary={true} onTouchTap={this.handleToggleFormType}/>
+              <FlatButton label={splashLinkText} secondary={true} onTouchTap={this.handleToggleFormType}/>
             </section>
           </Dialog>
         </MuiThemeProvider>
