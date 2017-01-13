@@ -1,31 +1,45 @@
-export const createList = list => {
-  return $.ajax({
+export const createList = (list, success, error)=> (
+  $.ajax({
     method: "GET",
     url: 'api/lists',
-    data: {list}
-  });
-};
+    data: {list},
+    success,
+    error
+  })
+);
 
-export const fetchList = (id, success) => {
-  return $.ajax({
+export const fetchLists = (success, error) => (
+  $.ajax({
+    method: "GET",
+    url: `api/lists/`,
+    success,
+    error
+  })
+);
+
+export const fetchList = (id, success, error) => (
+  $.ajax({
     method: "GET",
     url: `api/lists/${id}`,
-    success
-  });
-};
+    success,
+    error
+  })
+);
 
-export const deleteList = id => {
-  return $.ajax({
+export const deleteList = (id, success, error) => (
+  $.ajax({
     method: "POST",
-    url: `api/lists/${id}`
-  });
-};
+    url: `api/lists/${id}`,
+    success,
+    error
+  })
+);
 
-export const updateList = (list, success, error) => {
+export const updateList = (list, success, error) => (
   $.ajax({
     method: "PATCH",
     url: `api/lists/${list.id}`,
     success,
     error
-  });
-};
+  })
+);
