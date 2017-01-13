@@ -1,8 +1,8 @@
-import {connect} from 'react-redx';
+import {connect} from 'react-redux';
 import ListsIndex from './lists_index';
 
 const mapStateToProps = (state) => ({
-  currentUser: state.ession.currentUser
+  currentUser: state.session.currentUser
 });
 
 export default connect(
