@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SplashContainer from './splash/splash_container';
 import ListsIndexContainer from './lists/lists_index_container';
+import ListContainer from './lists/list_container';
 
 const Root = ({ store }) => {
 
@@ -26,8 +27,8 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
          <Route path="/" component={App} >
            <IndexRoute component={SplashContainer} onEnter={_redirectIfSignedIn}/>
-           <Route path="/lists" component={ListsIndexContainer} onEnter={_ensureSignedIn}>
-           </Route>
+           <Route path="/lists" component={ListsIndexContainer} onEnter={_ensureSignedIn}/>
+           <Route path="/lists/:listId" component={ListContainer} onEnter={_ensureSignedIn}/>
          </Route>
       </Router>
     </Provider>

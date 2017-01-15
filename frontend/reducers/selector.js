@@ -5,3 +5,8 @@ export const selectAllLists = ({lists, session}) =>  (
       (list) => list.user_id === session.currentUser.id
     )
 );
+
+export const selectList = (state, listId) => {
+  listId = parseInt(listId);
+  return state.lists[listId] || {};
+};
