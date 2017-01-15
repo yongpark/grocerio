@@ -1,5 +1,12 @@
 import React from 'react';
 import {withRouter} from 'react-router';
+import TextField from 'material-ui/TextField';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
+import {Card, CardTitle} from 'material-ui/Card';
 
 const defaultState = {
   list: {
@@ -57,18 +64,19 @@ class ListCreateForm extends React.Component{
 
     return(
       <form onSubmit={this.createList}>
-        <label>
-          Title
-          <input
-            type="text"
-            className="input"
-            ref="titleInput"
-            placeholder="Weekly Grocery List"
-            value={title}
-            onChange={this.updateNewList('title')}
-          />
-        </label>
-        <input type="submit" value="Create"/>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <Card>
+            <CardTitle title="Title"  />
+            <TextField
+              id="titleinput"
+              type="text"
+              placeholder="Weekly Grocery List"
+              value={title}
+              onChange={this.updateNewList('title')}
+            />
+          <RaisedButton type="submit" secondary={true} label="Create"/>
+        </Card>
+        </MuiThemeProvider>
       </form>
     );
   }

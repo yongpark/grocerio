@@ -18,8 +18,6 @@ class ListsIndex extends React.Component{
               <ListIndexItem key={list.id} list={list} />
               )
             }
-          </ul>
-          <ul className="lists-list">
             <ListsIndexCreateContainer/>
           </ul>
         </section>

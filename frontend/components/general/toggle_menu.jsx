@@ -18,8 +18,10 @@ class ToggleMenu extends React.Component {
     if(e) e.stopPropagation();
   }
 
-  renderMenu(title, menuContent){
+  renderMenu(title, menuContent, customClass = ''){
     const {children, show, disable} = this.props;
+    let menuClass = `menu ${customClass}`;
+    if (show) menuClass += " show";
     let titleContent = '';
     if(title) {
       titleContent = (
@@ -33,7 +35,7 @@ class ToggleMenu extends React.Component {
     }
 
     return (
-      <section onClick={this.stopPropagation}>
+      <section className={menuClass} onClick={this.stopPropagation}>
         {titleContent}
         {menuContent}
       </section>
