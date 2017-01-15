@@ -24,8 +24,8 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-         <Route path="/" component={App}>
-           <IndexRoute component={SplashContainer}/>
+         <Route path="/" component={App} >
+           <IndexRoute component={SplashContainer} onEnter={_redirectIfSignedIn}/>
            <Route path="/lists" component={ListsIndexContainer} onEnter={_ensureSignedIn}>
            </Route>
          </Route>

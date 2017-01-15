@@ -14,6 +14,8 @@ const ListReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.list.id];
       return newState;
+    default:
+      return state;
   }
 };
 

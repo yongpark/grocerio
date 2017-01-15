@@ -1,7 +1,3 @@
-export const selectPersonalLists = ({ lists, session }) => (
-  Object.keys(lists)
-    .map(key => lists[key])
-    .filter(
-      (list) => list.user_id === session.currentUser.id
-    )
+export const selectAllLists = state => (
+  Object.keys(state.lists).map(id => state.lists[id])
 );
