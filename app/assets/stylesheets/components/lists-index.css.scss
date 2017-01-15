@@ -1,0 +1,15 @@
+.lists-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.list-box {
+  position: relative;
+  display: block;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+}
