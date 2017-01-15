@@ -12,8 +12,8 @@ class ListsIndex extends React.Component{
 
     render(){
       return(
-        <div className="lists-index">
-          <h1 className="lists-index-header">Your Grocery Lists</h1>
+        <section className="lists-index">
+          <h2 className="lists-index-header">Your Grocery Lists</h2>
           <ul className='lists-list'>
             {
               this.props.lists.map(list =>
@@ -21,7 +21,7 @@ class ListsIndex extends React.Component{
               )
             }
           </ul>
-        </div>
+        </section>
       );
     }
 }
