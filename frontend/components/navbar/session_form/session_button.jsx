@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
+import {FlatButton, RaisedButton, TextField} from 'material-ui';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';

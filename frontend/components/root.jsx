@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SplashContainer from './splash/splash_container';
-import ListsContainer from './lists/lists_container';
+import ListsIndexContainer from './lists/lists_index_container';
 
 const Root = ({ store }) => {
 
@@ -26,7 +26,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
          <Route path="/" component={App}>
            <IndexRoute component={SplashContainer}/>
-           <Route path="/lists" component={ListsContainer} onEnter={_ensureSignedIn}>
+           <Route path="/lists" component={ListsIndexContainer} onEnter={_ensureSignedIn}>
            </Route>
          </Route>
       </Router>

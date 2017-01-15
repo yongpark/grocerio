@@ -18,11 +18,11 @@ class List < ApplicationRecord
     class_name: "User"
   )
 
-  has_many(
-    :columns,
-    primary_key: :id,
-    foreign_key: :list_id,
-    class_name: "Column"
-  )
+  # has_many(
+  #   :columns,
+  #   primary_key: :id,
+  #   foreign_key: :list_id,
+  #   class_name: "Column"
+  # )
 
 end

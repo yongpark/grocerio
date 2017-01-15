@@ -1,11 +1,11 @@
-import * as ListAPIUtil from '../util/list_api_util'
+import * as ListAPIUtil from '../util/list_api_util';
 
-export const RECEIVE_LISTS = "RECIEVE_LISTS";
+export const RECEIVE_LISTS = "RECEIVE_LISTS";
 export const RECEIVE_LIST = "RECEIVE_LIST";
 export const REMOVE_LIST = "REMOVE_LIST";
 
 export const receiveLists = lists => ({
-  type: RECEIVE_LIST,
+  type: RECEIVE_LISTS,
   lists
 });
 
@@ -20,36 +20,31 @@ export const removeList = list => ({
 });
 
 export const createList = list => dispatch => (
-  ListAPIUtil.createList(list).then(newList => {
-    dispatch(receiveList(list));
-    return list;
-  })
+  ListAPIUtil.createList(list).then(newList => (
+    dispatch(receiveList(newList))
+  ))
 );
 
 export const fetchList = id => dispatch =>(
-  ListAPIUtil.fetchList(id).then(list =>{
-    dispatch(receiveList(list));
-    return list;
-  })
+  ListAPIUtil.fetchList(id).then(list =>
+    dispatch(receiveList(list))
+  )
 );
 
 export const fetchLists = () => dispatch => (
-  ListAPIUtil.fetchLists().then(lists =>{
-    dispatch(receiveLists(lists));
-    return lists;
-  })
+  ListAPIUtil.fetchLists().then(lists =>
+    dispatch(receiveLists(lists))
+  )
 );
 
 export const updateList = id => dispatch => (
-  ListAPIUtil.fetchLists().then(updatedList =>{
-    dispatch(receiveList(updatedList));
-    return updatedList;
-  })
+  ListAPIUtil.fetchLists().then(updatedList =>
+    dispatch(receiveList(updatedList))
+  )
 );
 
 export const deleteList = id => dispatch => (
-  ListAPIUtil.fetchList().then(deletedList =>{
-    dispatch(removeList);
-    return deletedList;
-  })
+  ListAPIUtil.fetchList().then(deletedList =>
+    dispatch(removeList(deletedList))
+  )
 );

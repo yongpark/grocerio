@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
-  
+
   def current_user
     return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token])
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def require_list_creator(list_id)
     @list = List.find(list_id)
-    if !current_user || list.user_id != current_user.id
+    if !current_user || @list.user_id != current_user.id
       render json: "Unauthorized access", status: 401
     end
   end

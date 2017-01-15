@@ -41,7 +41,7 @@ class SessionForm extends React.Component{
       password: 'password'
     };
     this.props.login({user});
-    this.props.closeAuthModal();
+    this.props.closeAuthModal('login');
   }
 
   update(field){
