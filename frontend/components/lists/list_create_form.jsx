@@ -66,7 +66,7 @@ class ListCreateForm extends React.Component{
       <form onSubmit={this.createList}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card>
-            <CardTitle title="Title"  />
+            <CardTitle title="Grocery List Name"/>
             <TextField
               id="titleinput"
               type="text"

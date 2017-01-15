@@ -4,7 +4,7 @@ import {toggleMenu} from '../../actions/menu_actions';
 import ListsIndexCreate from './lists_index_create';
 
 const mapStateToProps = ({menuState}) => ({
-  show: false,
+  show: menuState.showListsIndexCreatem
 });
 
 const mapDispatchToProps = (dispatch) => ({

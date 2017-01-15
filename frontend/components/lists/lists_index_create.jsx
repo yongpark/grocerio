@@ -1,6 +1,11 @@
 import React from 'react';
 import ToggleMenu from '../general/toggle_menu';
 import ListCreateFormContainer from './list_create_form_container';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 
 class ListsIndexCreate extends ToggleMenu{
   render(){
@@ -12,10 +17,12 @@ class ListsIndexCreate extends ToggleMenu{
 
     return(
       <li className="list-create">
-        <section onClick={this.toggle}>
-          Create new list...
-        </section>
-        {this.renderMenu('Create', menuContent, "list-create-menu")}
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <Card onClick={this.toggle} className="list-create">
+              <CardTitle title="Create new list..."/>
+          </Card>
+        </MuiThemeProvider>
+          {this.renderMenu('Create Grocery List', menuContent, "list-create-menu")}
       </li>
     );
   }
