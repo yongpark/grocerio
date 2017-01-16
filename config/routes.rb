@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :lists, except: [:new, :edit]
   end
-
+  resources :columns, only: [:create]
   root "static_pages#root"
 end

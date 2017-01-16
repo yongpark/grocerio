@@ -31,4 +31,4 @@ id             | integer   | not null, primary key
 title          | string    | not null
 column_id      | integer   | not null, foregin key (references columns), indexed
 expire_date    | integer   | not null
-expired        | binary    | not null, default: false
+expired        | boolean   | not null, default: false

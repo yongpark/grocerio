@@ -1,0 +1,2 @@
+class Gitem < ApplicationRecord
+end
