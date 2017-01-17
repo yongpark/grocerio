@@ -25,6 +25,6 @@ class Api::ColumnsController < ApplicationController
 
     private
     def column_params
-      params.require(:column).permit(:title, :user_id)
+      params.require(:column).permit(:title, :user_id, :column_type)
     end
 end

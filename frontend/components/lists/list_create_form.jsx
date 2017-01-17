@@ -73,7 +73,7 @@ class ListCreateForm extends React.Component{
       <li className='list-box' onClick={this.show}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className="list-box">
-            <CardTitle title="Create a new board..."/>
+            <CardTitle title="Create a new list..."/>
           </Card>
         </MuiThemeProvider>
         <div className="list-create-container" ref='popUp'>
