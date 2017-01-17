@@ -7,7 +7,10 @@ class Api::ListsController < ApplicationController
   def create
     @list = current_user.owned_lists.new(list_params)
     if @list.save
-      Column.create(list_id: @list.id, title: "test", column_type: "bought")
+      @list.columns.create(list_id: @list.id, title: "To Buy", column_type: "to_buy")
+      @list.columns.create(list_id: @list.id, title: "Bought", column_type: "bought")
+      @list.columns.create(list_id: @list.id, title: "Expired", column_type: "expired")
+      @list.columns.create(list_id: @list.id, title: "Used", column_type: "used")
       render :show
     else
       render json: @list.errors, status: 422
