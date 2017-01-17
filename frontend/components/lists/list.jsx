@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import ListMenuContainer from './list_menu_container';
 
 class List extends Component{
   componentDidMount(){
@@ -8,12 +9,14 @@ class List extends Component{
 
   render(){
     const listId = this.props.params.listId;
-    console.log(this.props);
     return (
-      <div>
-        TEST
+      <div className="list-container">
+        <div>
+
+        </div>
+        <ListMenuContainer listId={listId}/>
       </div>
-  );
+    );
   }
 }
 

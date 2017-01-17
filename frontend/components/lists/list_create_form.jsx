@@ -65,7 +65,6 @@ class ListCreateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     this.props.createList(this.state.list).then(this.hide);
   }
 

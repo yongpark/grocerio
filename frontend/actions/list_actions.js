@@ -38,13 +38,13 @@ export const fetchLists = () => dispatch => (
 );
 
 export const updateList = id => dispatch => (
-  ListAPIUtil.fetchLists().then(updatedList =>
+  ListAPIUtil.updateList(id).then(updatedList =>
     dispatch(receiveList(updatedList))
   )
 );
 
 export const deleteList = id => dispatch => (
-  ListAPIUtil.fetchList().then(deletedList =>
+  ListAPIUtil.deleteList(id).then(deletedList =>
     dispatch(removeList(deletedList))
   )
 );
