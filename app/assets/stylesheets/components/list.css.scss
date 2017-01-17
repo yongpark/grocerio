@@ -1,6 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
 .list-menu{
   width: 260px;
   left: 10px;
   top: 30px;
   text-align: center;
+
+}
+
+.list-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.list-container-header{
+  font-family: 'Roboto', 'san-serif';
+  margin-left: 20px;
+  padding: 5px; 
 }

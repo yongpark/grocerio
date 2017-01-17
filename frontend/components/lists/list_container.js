@@ -4,7 +4,7 @@ import {selectList} from '../../reducers/selector';
 import List from './list';
 
 const mapStateToProps = (state, ownProps) => ({
-  board: selectList(state, ownProps.params.listId)
+  list: selectList(state, ownProps.params.listId)
 });
 
 const mapDispatchToProps = dispatch => ({
