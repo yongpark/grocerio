@@ -7,7 +7,6 @@ class Api::ColumnsController < ApplicationController
 
     def create
       @column = Column.new(column_params)
-      #comment
       if @column.save
         render :show
       else
