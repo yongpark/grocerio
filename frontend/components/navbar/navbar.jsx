@@ -9,8 +9,15 @@ import SessionFormContainer from './session_form/session_form_container';
 
 const navbarStyle = {
   backgroundColor: '#FF3D00',
-  width: '100%'
+  width: '100%',
+  title: {
+   cursor: 'pointer',
+ },
 };
+
+function handleTouchTap() {
+  hashHistory.push('/lists');
+}
 
 
 
@@ -22,11 +29,12 @@ class NavBar extends React.Component{
   handleClick(url){
     hashHistory.push(url);
   }
+
   render(){
     const handleClick = url => () => hashHistory.push(url);
     return(
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)} className="navbar">
-        <AppBar title="Grocero">
+        <AppBar title={<span style={navbarStyle.title}>Grocero</span>} onTitleTouchTap={handleTouchTap}>
           <SessionButtonContainer/>
           <SessionFormContainer/>
         </AppBar>
