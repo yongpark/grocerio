@@ -10,6 +10,7 @@
 #
 
 class List < ApplicationRecord
+  validates :title, :owner, presence: true
 
   belongs_to(
     :owner,
@@ -18,11 +19,12 @@ class List < ApplicationRecord
     class_name: "User"
   )
 
-  # has_many(
-  #   :columns,
-  #   primary_key: :id,
-  #   foreign_key: :list_id,
-  #   class_name: "Column"
-  # )
+  has_many(
+    :columns,
+    primary_key: :id,
+    foreign_key: :list_id,
+    dependent: :destroy,
+    class_name: "Column"
+  )
 
 end
