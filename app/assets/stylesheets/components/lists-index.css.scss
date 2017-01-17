@@ -37,15 +37,22 @@
   cursor: pointer;
   font-family: 'Roboto', 'san-serif';
   color: white;
+  &:hover {
+        cursor: pointer;
+        background-color: black;
+        color: blue;
+      }
 }
 
 .lists-index-header{
   font-family: 'Roboto', 'san-serif';
 }
 
-.list-create {
+.list-create-container {
+  position: absolute;
+  z-index: 2;
   cursor: pointer;
-  display: block;
+  display: none;
   width: 250px;
   height: 125px;
   font-size: 14px;
@@ -56,4 +63,5 @@
   font-family: 'Roboto', 'san-serif';
   text-align: center;
   line-height: 50px;
+  bottom: -15%;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import ReactDOM from 'react-dom';
 import TextField from 'material-ui/TextField';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -7,79 +7,95 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
+import merge from 'lodash/merge';
 
-const defaultState = {
-  list: {
-    title: ''
-  }
-};
 
 class ListCreateForm extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.state = {
+      show: false,
+      list: props.list
+    };
 
-    this.state = Object.assign({}, defaultState);
-    this.createList = this.createList.bind(this);
-    this.updateNewList = this.updateNewList.bind(this);
+    this.show = this.show.bind(this);
+    this.hide = this.hide.bind(this);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-  updateNewList(property){
-    return e=> {
-      Object.freeze(this.state);
-      const value = (
-        typeof e.currentTarget.value !== 'undefined' ?
-        e.currentTarget.value :
-        e.currentTarget.dataset.value
-      );
-      const list = Object.assign({}, this.state.list,{
-        [property]: value
+  componentDidMount(){
+    document.addEventListener('click', this.handleClickOutside, true);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener('click', this.handleClickOutside, true);
+  }
+
+  componentWillReceiveProps(newProps){
+    this.state.list = newProps.list;
+  }
+
+  handleClickOutside(e){
+    const domNode = ReactDOM.findDOMNode(this);
+    if (!domNode || !domNode.contains(event.target)) {
+      this.hide();
+    }
+  }
+
+  show(){
+    this.refs.popUp.style.display = 'flex';
+    this.setState({show: true});
+  }
+
+  hide(){
+    this.refs.popUp.style.display = 'none';
+    this.setState({show: false});
+  }
+
+  update(prop){
+    return e => {
+      const list = merge({}, this.state.list, {
+        [prop]: e.target.value
       });
-      this.setState({
-        list
-      });
+      this.setState({list});
     };
   }
 
-  createList(e){
+  handleSubmit(e) {
     e.preventDefault();
-    const newList = Object.assign({}, this.state.list);
-    newList.title = newList.title.trim();
-    if (newList.title !==''){
-      this.props.createList(newList).then((list) => {
-        this.props.toggle();
-        this.setState(Object.assign({}, defaultState));
-        this.props.router.push(`/lists/${list.id}`);
-        this.props.resetMenus();
-      });
-    }
+    debugger;
+    this.props.createList(this.state.list).then(this.hide);
   }
 
   render(){
-    const {list} = this.state;
-    const {title} = list;
-
-    if (this.props.show){
-      setTimeout(() => this.refs.titleInput.focus(), 1);
-    }
-
     return(
-      <form onSubmit={this.createList}>
+      <li className='list-box' onClick={this.show}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Card>
-            <CardTitle title="Grocery List Name"/>
-            <TextField
-              id="titleinput"
-              type="text"
-              placeholder="Weekly Grocery List"
-              value={title}
-              onChange={this.updateNewList('title')}
-            />
-          <RaisedButton type="submit" secondary={true} label="Create"/>
-        </Card>
+          <Card className="list-box">
+            <CardTitle title="Create a new board..."/>
+          </Card>
         </MuiThemeProvider>
-      </form>
+        <div className="list-create-container" ref='popUp'>
+          <form onSubmit={this.handleSubmit}>
+            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+              <Card>
+                <CardTitle title="Grocery List Name"/>
+                <TextField
+                  id="titleinput"
+                  type="text"
+                  placeholder="Weekly Grocery List"
+                  onChange={this.update('title')}
+                />
+              <RaisedButton type="submit" secondary={true} label="Create"/>
+            </Card>
+            </MuiThemeProvider>
+          </form>
+        </div>
+    </li>
     );
   }
 }
 
-export default withRouter(ListCreateForm);
+export default ListCreateForm;

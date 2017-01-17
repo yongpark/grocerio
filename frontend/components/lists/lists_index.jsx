@@ -1,6 +1,6 @@
 import React from 'react';
 import ListIndexItem from './list_index_item';
-import ListsIndexCreateContainer from './lists_index_create_container';
+import ListsCreateFormContainer from './list_create_form_container';
 
 
 class ListsIndex extends React.Component{
@@ -18,7 +18,7 @@ class ListsIndex extends React.Component{
               <ListIndexItem key={list.id} list={list} />
               )
             }
-            <ListsIndexCreateContainer/>
+            <ListsCreateFormContainer/>
           </ul>
         </section>
       );
