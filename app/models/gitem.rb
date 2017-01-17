@@ -1,5 +1,5 @@
 class Gitem < ApplicationRecord
-  validates :title, :column, :expired, prence: true
+  validates :title, :column, :expired, presence: true
 
   belongs_to(
     :column,
