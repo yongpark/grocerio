@@ -46,7 +46,6 @@
 .list-create-container {
   position: absolute;
   z-index: 2;
-  cursor: pointer;
   display: none;
   width: 250px;
   height: 125px;
@@ -57,7 +56,7 @@
   text-decoration: none;
   font-family: 'Roboto', 'san-serif';
   text-align: center;
-  line-height: 50px;
+  
   bottom: -15%;
   top: -1%;
   left: -1%;

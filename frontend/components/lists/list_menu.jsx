@@ -10,10 +10,10 @@ import {Card, CardTitle} from 'material-ui/Card';
 const ListMenu = ({listId, deleteList, router}) => {
   return(
   <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-    <Card>
+    <Card className="list-menu">
       <CardTitle title="List Menu"/>
       <RaisedButton onClick={() => deleteList(listId)
-        .then(router.push('/lists'))} label="Delete List"/>
+        .then(router.push('/lists'))} label="Delete List" secondary={true}/>
     </Card>
   </MuiThemeProvider>
   );
