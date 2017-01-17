@@ -7,6 +7,7 @@ class Api::ListsController < ApplicationController
   def create
     @list = current_user.owned_lists.new(list_params)
     if @list.save
+      Column.create(list_id: @list.id, title: "test", column_type: "bought")
       render :show
     else
       render json: @list.errors, status: 422
