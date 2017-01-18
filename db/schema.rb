@@ -24,12 +24,14 @@ ActiveRecord::Schema.define(version: 20170118060353) do
   end
 
   create_table "g_items", force: :cascade do |t|
-    t.integer  "title",                       null: false
+    t.string   "title",                       null: false
     t.integer  "column_id",                   null: false
     t.date     "expire_date"
     t.boolean  "expired",     default: false, null: false
+    t.integer  "ord",                         null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["column_id", "ord"], name: "index_g_items_on_column_id_and_ord", using: :btree
   end
 
   create_table "lists", force: :cascade do |t|

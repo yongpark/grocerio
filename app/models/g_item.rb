@@ -12,7 +12,7 @@
 #
 
 class GItem < ApplicationRecord
-  validates :title, :column, :expired, presence: true
+
 
   belongs_to(
     :column,
@@ -21,8 +21,11 @@ class GItem < ApplicationRecord
     class_name: "Column"
   )
 
-  belongs_to :owner,
-  class_name: "User"
+  has_one(
+    :owner,
+    through: :list,
+    source: :owner
+  )
 
   has_one(
     :list,
