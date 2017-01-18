@@ -9,15 +9,13 @@ import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import merge from 'lodash/merge';
 
-
-class ListCreateForm extends React.Component{
+class ListUpdateForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       show: false,
       list: props.list
     };
-
     this.show = this.show.bind(this);
     this.hide = this.hide.bind(this);
     this.update = this.update.bind(this);
@@ -25,8 +23,17 @@ class ListCreateForm extends React.Component{
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
+  handleClickOutside(e){
+    const domNode = ReactDOM.findDOMNode(this);
+    if (!domNode || !domNode.contains(event.target)) {
+      this.hide();
+    }
+  }
+
   componentDidMount(){
     document.addEventListener('click', this.handleClickOutside, true);
+    console.log(this.props);
+    console.log(this.state);
   }
 
   componentWillUnmount(){
@@ -37,20 +44,13 @@ class ListCreateForm extends React.Component{
     this.state.list = newProps.list;
   }
 
-  handleClickOutside(e){
-    const domNode = ReactDOM.findDOMNode(this);
-    if (!domNode || !domNode.contains(event.target)) {
-      this.hide();
-    }
-  }
-
   show(){
-    this.refs.create.style.display = 'flex';
+    this.refs.update.style.display = 'flex';
     this.setState({show: true});
   }
 
   hide(){
-    this.refs.create.style.display = 'none';
+    this.refs.update.style.display = 'none';
     this.setState({show: false});
   }
 
@@ -65,36 +65,33 @@ class ListCreateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createList(this.state.list).then(this.hide);
+    this.props.updateList(this.state.list).then(this.hide);
   }
 
   render(){
     return(
-      <li className='list-box' onClick={this.show}>
-        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Card className="list-box">
-            <CardTitle title="Create a new list..."/>
-          </Card>
-        </MuiThemeProvider>
-        <div className="list-create-container" ref='create'>
+      <div>
+        <h2 className="list-container-heading" onClick={this.show}>{this.props.list.title}</h2>
+        <div className="list-update-container" ref='update'>
           <form onSubmit={this.handleSubmit}>
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
               <Card>
-                <CardTitle className="card-subtitle" title="Grocery List Name" subtitle="List Name"/>
-                <TextField
-                  id="titleinput"
-                  type="text"
-                  placeholder="Weekly Grocery List"
-                  onChange={this.update('title')}
-                />
-              <RaisedButton type="submit" secondary={true} label="Create"/>
-            </Card>
+                <CardTitle title="Rename List" subtitle="List Name"/>
+                  <TextField
+                    id="titleinput"
+                    type="text"
+                    value={this.state.list.title}
+                    placeholder="Weekly Grocery List"
+                    onChange={this.update('title')}
+                  />
+                <RaisedButton type="submit" secondary={true} label="Update"/>
+              </Card>
             </MuiThemeProvider>
           </form>
         </div>
-    </li>
+      </div>
     );
   }
 }
 
-export default ListCreateForm;
+export default ListUpdateForm;

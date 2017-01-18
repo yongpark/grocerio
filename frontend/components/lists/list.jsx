@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import ListMenuContainer from './list_menu_container';
-import ColumnIndexContainer from '../column/column_index_container'
+import ColumnIndexContainer from '../column/column_index_container';
+import ListUpdateFormContainer from './list_update_form_container';
 
 class List extends Component{
   componentDidMount(){
     this.props.fetchList(this.props.params.listId)
     .then(() => this.props.fetchColumns(this.props.params.listId)
-    ,() => this.props.router.push('/boards'))
+    ,() => this.props.router.push('/boards'));
   }
 
   componentWillReceiveProps(newProps){
@@ -26,11 +27,9 @@ class List extends Component{
       <div className="list-container">
         <div>
             <div className="list-container-header">
-              <h2 className="list-container-heading">{this.props.list.title}</h2>
-                </div>
-                <div>
-                  <ColumnIndexContainer listId={listId}/>
-
+              <ListUpdateFormContainer listId={listId}/>
+              <div></div>
+                <ColumnIndexContainer listId={listId}/>
             </div>
         </div>
         <ListMenuContainer listId={listId}/>

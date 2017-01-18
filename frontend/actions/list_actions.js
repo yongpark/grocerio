@@ -37,8 +37,8 @@ export const fetchLists = () => dispatch => (
   )
 );
 
-export const updateList = id => dispatch => (
-  ListAPIUtil.updateList(id).then(updatedList =>
+export const updateList = list => dispatch => (
+  ListAPIUtil.updateList(list).then(updatedList =>
     dispatch(receiveList(updatedList))
   )
 );
