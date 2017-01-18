@@ -17,7 +17,7 @@ export const login = user => dispatch => (
   APIUtil.login(user)
     .then(user1 => dispatch(receiveCurrentUser(user1))).then(() => {
       dispatch(closeAuthModal('login'));
-      hashHistory.push("/lists");
+      hashHistory.push("#/lists");
     }),
       err => dispatch(receiveErrors(err.responseJSON)));
 

@@ -1,1 +1,1 @@
-json.partial! "api/lists/list", list: @list
+json.partial! "list", list: @list

@@ -1,4 +1,4 @@
-class Api::GItemsController < ApplicationController
+class Api::GitemsController < ApplicationController
 
   def index
     @gitems = GItem
