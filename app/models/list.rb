@@ -27,4 +27,10 @@ class List < ApplicationRecord
     class_name: "Column"
   )
 
+  has_many(
+    :gitems,
+    through: :columns,
+    source: :gitems
+  )
+
 end

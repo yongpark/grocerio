@@ -1,18 +1,19 @@
 # == Schema Information
 #
-# Table name: columns
+# Table name: g_items
 #
 #  id          :integer          not null, primary key
-#  list_id     :integer          not null
-#  title       :string           not null
-#  column_type :string           not null
+#  title       :integer          not null
+#  column_id   :integer          not null
+#  expire_date :date
+#  expired     :boolean          default("false"), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class ColumnTest < ActiveSupport::TestCase
+class GItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -26,6 +26,19 @@ class User < ApplicationRecord
     class_name: "List"
   )
 
+  has_many(
+    :owned_columns,
+    through: :owned_lists,
+    source: :columns
+  )
+
+  has_many(
+    :owned_gitems,
+    through: :owned_columns,
+    source: :gitems
+  )
+
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
