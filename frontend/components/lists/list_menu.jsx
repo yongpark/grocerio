@@ -9,13 +9,15 @@ import {Card, CardTitle} from 'material-ui/Card';
 
 const ListMenu = ({listId, deleteList, router}) => {
   return(
-  <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-    <Card className="list-menu">
-      <CardTitle title="List Menu"/>
-      <RaisedButton onClick={() => deleteList(listId)
-        .then(router.push('/lists'))} label="Delete List" secondary={true}/>
-    </Card>
-  </MuiThemeProvider>
+  <div className="list-menu">
+    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <Card>
+        <CardTitle title="List Menu"/>
+        <RaisedButton onClick={() => deleteList(listId)
+          .then(router.push('/lists'))} label="Delete List" secondary={true}/>
+      </Card>
+    </MuiThemeProvider>
+  </div>
   );
 };
 

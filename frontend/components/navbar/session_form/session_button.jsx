@@ -28,6 +28,7 @@ class SessionButton extends React.Component{
               className='session-button'
               labelStyle={labelstyle}
               label="logout"
+              style={style}
               onClick={this.props.logout}/>
           </MuiThemeProvider>
         </div>
@@ -37,8 +38,7 @@ class SessionButton extends React.Component{
       return(
         <div>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-            <RaisedButton className='session-button' label="login" style={style} labelStyle={labelstyle}
-              onClick={this.props.openAuthModal} iconElementRight={<FlatButton label="Login" onClick={this.props.openAuthModal} />}>
+            <RaisedButton className='session-button' label="login" style={style} labelStyle={labelstyle} onClick={this.props.openAuthModal}>
             </RaisedButton>
           </MuiThemeProvider>
         </div>

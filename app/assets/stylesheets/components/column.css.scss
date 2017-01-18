@@ -1,0 +1,21 @@
+.column-index{
+  display: flex;
+  padding-bottom: 20px;
+ flex-direction: row;
+ justify-content: flex-start;
+}
+
+.column-index-item-container{
+  position: relative;
+  display: block;
+  width: 250px;
+  height: 125px;
+  margin-right: 50px;
+  margin-top: 40px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.column-index-item{
+
+}
