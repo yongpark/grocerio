@@ -34,8 +34,8 @@
     "url": "git+https://github.com/yongpark/grocero.git"
   },
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "6.2.1",
+    "npm": "4.1.1"
   },
   "keywords": [],
   "author": "",
