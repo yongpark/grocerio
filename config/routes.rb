@@ -4,9 +4,11 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :lists, except: [:new, :edit] do
-        resources :columns, only: [:create, :index]
-        resources :gitems, except: [:index, :new, :edit]
+        resources :columns, only: [:index]
+        resources :gitems, only: [:index]
     end
+    resources :columns, except: [:new, :edit, :index, :update]
+    resources :gitems, except: [:new, :edit, :index]
   end
   root "static_pages#root"
 end

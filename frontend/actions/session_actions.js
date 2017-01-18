@@ -2,8 +2,8 @@ import * as APIUtil from '../util/session_api_util';
 import { hashHistory } from 'react-router';
 import { closeAuthModal } from './modal_actions';
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const signup = user => dispatch => (
   APIUtil.signup(user)

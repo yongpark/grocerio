@@ -4,17 +4,17 @@ export const RECEIVE_LISTS = "RECEIVE_LISTS";
 export const RECEIVE_LIST = "RECEIVE_LIST";
 export const REMOVE_LIST = "REMOVE_LIST";
 
-export const receiveLists = lists => ({
+const receiveLists = lists => ({
   type: RECEIVE_LISTS,
   lists
 });
 
-export const receiveList = list => ({
+const receiveList = list => ({
   type: RECEIVE_LIST,
   list
 });
 
-export const removeList = list => ({
+const removeList = list => ({
   type: REMOVE_LIST,
   list
 });
