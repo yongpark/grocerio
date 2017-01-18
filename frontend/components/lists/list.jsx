@@ -24,9 +24,14 @@ class List extends Component{
     const listId = this.props.params.listId;
     return (
       <div className="list-container">
-        <h2 className="list-container-header">{this.props.list.title}</h2>
         <div>
-          <ColumnIndexContainer listId={listId}/>
+            <div className="list-container-header">
+              <h2 className="list-container-heading">{this.props.list.title}</h2>
+                </div>
+                <div>
+                  <ColumnIndexContainer listId={listId}/>
+
+            </div>
         </div>
         <ListMenuContainer listId={listId}/>
       </div>
