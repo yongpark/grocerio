@@ -5,6 +5,10 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+const style = {
+  width: "200px"
+};
+
 
 class SplashSessionButton extends React.Component{
   constructor(props){
@@ -25,7 +29,7 @@ class SplashSessionButton extends React.Component{
       return(
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <RaisedButton label="sign up"
-            onClick={this.props.openAuthModal} className={"splash-session-button"}/>
+            onClick={this.props.openAuthModal}  style={style} className="splash-session-button"/>
         </MuiThemeProvider>
       );
     }
