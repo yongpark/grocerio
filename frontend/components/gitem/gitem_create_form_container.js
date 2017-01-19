@@ -3,7 +3,7 @@ import {createGItem} from '../../actions/gitem_actions';
 import GItemCreateForm from './gitem_create_form';
 
 const mapStateToProps = (state, ownProps) => ({
-  card: {title: '', column_id: ownProps.columnId, expired: false}
+  gitem: {title: '', column_id: ownProps.columnId}
 });
 
 const mapDispatchToProps = dispatch => ({
