@@ -25,6 +25,12 @@ export const fetchColumns = (listId) => dispatch => (
     .then(columns => dispatch(receiveColumns(columns)))
 );
 
+export const fetchColumn = (id) => dispatch => (
+  ColumnAPIUtil.fetchColumn(id)
+    .then(column => dispatch(receiveColumn(column)))
+);
+
+
 export const createColumn = column => dispatch => (
   ColumnAPIUtil.createColumn(column)
     .then(newColumn => dispatch(receiveColumn(newColumn)))
@@ -33,4 +39,9 @@ export const createColumn = column => dispatch => (
 export const deleteColumn = id => dispatch => (
   ColumnAPIUtil.deleteColumn(id)
     .then(deletedColumn => dispatch(removeColumn(deletedColumn)))
+);
+
+export const updateColumn = column => dispatch => (
+  ColumnAPIUtil.updateColumn(column)
+  .then(updatedColumn => dispatch(receiveColumn(updatedColumn)))
 );

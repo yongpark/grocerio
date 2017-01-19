@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
-  window.createList = GItemActions.createGItem;
+  window.createGItem = GItemActions.createGItem;
   window.fetchGItems = GItemActions.fetchGItems;
   window.fetchGItem = GItemActions.fetchGItem;
   window.deleteGItem = GItemActions.deleteGItem;

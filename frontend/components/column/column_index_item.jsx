@@ -5,16 +5,17 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {Card, CardTitle} from 'material-ui/Card';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 const ColumnIndexItem = ({column, listId}) => (
   <li className="column-index-item-container">
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
       <Card className="column-index-item">
         <CardTitle title={column.title}/>
-    
       </Card>
     </MuiThemeProvider>
   </li>
 );
 
-export default ColumnIndexItem;
+export default DragDropContext(HTML5Backend)(ColumnIndexItem);

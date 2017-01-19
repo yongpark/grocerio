@@ -4,6 +4,7 @@ import ListMenuContainer from './list_menu_container';
 import ColumnIndexContainer from '../column/column_index_container';
 import ListUpdateFormContainer from './list_update_form_container';
 
+
 class List extends Component{
   componentDidMount(){
     this.props.fetchList(this.props.params.listId)

@@ -23,7 +23,7 @@
       column_type: "buy"
     }
   }
-  grocery_item: {
+  gitem: {
     1: {
       title: "Soylent",
       user_id: 1,

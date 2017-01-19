@@ -14,3 +14,26 @@ export const selectList = (state, listId) => {
 export const selectColumns = state => (
   Object.keys(state.columns).map(id => state.columns[id])
 );
+
+export const selectGItems = (state, columnId) => {
+  columnId = parseInt(columnId);
+  return Object.keys(state.gitems)
+  .map(id => state.gitems[id])
+  .filter(id => state.gitems[id].column_id == columnId)
+  .sort(ordSort);
+};
+
+export const selectGItem = (state, gitemId) => {
+  gitemId = parseInt(gitemId);
+  return state.gitems[gitemId];
+};
+
+const ordSort = (a, b) => {
+  if (a.ord < b.ord) {
+    return -1;
+  } else if (a.ord > b.ord){
+    return 1;
+  } else {
+    return 0;
+  }
+};

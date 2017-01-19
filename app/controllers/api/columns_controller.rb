@@ -23,6 +23,15 @@ class Api::ColumnsController < ApplicationController
       end
     end
 
+    def update
+      @column = Column.find(params[:id])
+      if @column.update(column_params)
+        render :show
+      else
+        render json: @column.errors, status: 422
+      end
+    end
+
     private
     def column_params
       params.require(:column).permit(:title, :user_id, :column_type)

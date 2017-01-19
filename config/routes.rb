@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         resources :columns, only: [:index]
         resources :gitems, only: [:index]
     end
-    resources :columns, except: [:new, :edit, :index, :update]
+    resources :columns, except: [:new, :edit, :index]
     resources :gitems, except: [:new, :edit, :index]
   end
   root "static_pages#root"
