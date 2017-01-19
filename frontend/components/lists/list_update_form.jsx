@@ -33,7 +33,6 @@ class ListUpdateForm extends React.Component{
   componentDidMount(){
     document.addEventListener('click', this.handleClickOutside, true);
     console.log(this.props);
-    console.log(this.state);
   }
 
   componentWillUnmount(){

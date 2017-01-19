@@ -61,12 +61,8 @@ class GItem < ApplicationRecord
   end
 
   def self.next_ord(column_id)
-    max_ord = GItem.max_ord(column_id)
-    max_ord ? max_ord + 1 :0
-  end
-
-  def max_ord
-    GItem.next_ord(self.column_id)
+    max_ord = GItem.max_ord(self.column_id)
+    max_ord ? max_ord + 1 : 0
   end
 
   def next_ord
@@ -75,6 +71,7 @@ class GItem < ApplicationRecord
 
   def destroy
     GItem.update_other_ords(self.column_id, self.ord, self.max_ord)
+    super
   end
 
   def handle_ord_chnage

@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import merge from 'lodash/merge';
-
+import TextField from 'material-ui/TextField';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -94,10 +94,12 @@ class GItemCreateForm extends React.Component {
            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
              <Card>
                <CardTitle className="card-subtitle" title="Grocery Item" subtitle="Grocery Name"/>
-                 <input type='text'
-                   placeholder="Add a card..."
+                 <TextField
+                   id="titleinput"
+                   type="text"
+                   placeholder="Add a Grocery Item"
                    onChange={this.update('title')}
-               />
+                 />
              <RaisedButton type="submit" secondary={true} label="Save"/>
            </Card>
            </MuiThemeProvider>
