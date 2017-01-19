@@ -57,12 +57,16 @@ class GItem < ApplicationRecord
   end
 
   def self.max_ord(column_id)
-    GItem.where(column_id: column_id).maximum(:ord)
+      GItem.where(column_id: column_id).maximum(:ord)
   end
 
   def self.next_ord(column_id)
-    max_ord = GItem.max_ord(self.column_id)
+    max_ord = GItem.max_ord(column_id)
     max_ord ? max_ord + 1 : 0
+  end
+
+  def max_ord
+    GItem.max_ord(self.column_id)
   end
 
   def next_ord

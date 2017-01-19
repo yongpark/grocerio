@@ -4,17 +4,17 @@ export const RECEIVE_GITEMS = "RECEIVE_GITEMS";
 export const RECEIVE_GITEM = "RECEIVE_GITEM";
 export const REMOVE_GITEM = "REMOVE_GITEM";
 
-const receiveGItems = gitems => ({
+export const receiveGItems = gitems => ({
   type: RECEIVE_GITEMS,
   gitems
 });
 
-const receiveGItem = gitem => ({
+export const receiveGItem = gitem => ({
   type: RECEIVE_GITEM,
   gitem
 });
 
-const removeGItem = gitem => ({
+export const removeGItem = gitem => ({
   type: REMOVE_GITEM,
   gitem
 });

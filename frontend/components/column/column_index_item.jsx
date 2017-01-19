@@ -6,8 +6,9 @@ import Paper from 'material-ui/Paper';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {Card, CardTitle} from 'material-ui/Card';
 import GItemCreateFormContainer from '../gitem/gitem_create_form_container';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+
+
+
 
 const ColumnIndexItem = ({column, listId}) => (
   <li className="column-index-item-container">
@@ -22,4 +23,4 @@ const ColumnIndexItem = ({column, listId}) => (
   </li>
 );
 
-export default DragDropContext(HTML5Backend)(ColumnIndexItem);
+export default ColumnIndexItem;
