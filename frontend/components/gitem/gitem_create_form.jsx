@@ -80,6 +80,7 @@ class GItemCreateForm extends React.Component {
 
 
    handleSubmit(e){
+     console.log();
      e.preventDefault();
      if(this.state.gitem){
        this.props.createGItem(this.state.gitem).then(this.hide);
