@@ -16,7 +16,7 @@ Grocero is a Yong Park's a/A capstone project.
 - Expired grocery items automatically move to the expired column.
 - Recipes are recommended based on items in the "Bought" column that are close to expiring.
 
-![List Page: https://grocero.herokuapp.com/#/lists][tracks]
+![List Page: https://grocero.herokuapp.com/#/lists][lists]
 
 ## Project Design
 
@@ -113,7 +113,7 @@ Reap karma from shairing your profile page and how much money you saved.
 - Authentication integration with Facebook and Google+
 
 [grocero]: https://grocero.herokuapp.com/
-[home page]: ./docs/images/home_page.png "Grocero Home page"
-[lists]: ./docs/images/lists_page.png "Grocery List Page"
+[home page]: ./images/home_page.png "Grocero Home page"
+[lists]: ./images/lists_page.png "Grocery List Page"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
