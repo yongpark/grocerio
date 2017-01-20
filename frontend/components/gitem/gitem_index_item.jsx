@@ -107,9 +107,10 @@ class GItemIndexItem extends React.Component {
           <Card
             className={gitemClass}
             onMouseEnter={this.activate(true)}
-            onMouseLeave={this.activate(false)}>
+            onMouseLeave={this.activate(false)}
+            className="gitem-index-item">
             <CardTitle title={this.state.gitem.title}/>
-            <RaisedButton onClick={this.show} label="Edit"/>
+            <RaisedButton onClick={this.show} secondary={true} style={{fontWeight: 300}} label="Edit"/>
           </Card>
         </MuiThemeProvider>
             <div ref='gitemupdate'>

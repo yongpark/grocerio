@@ -10,7 +10,7 @@ class GItemIndex extends React.Component{
 
   render(){
     return(
-      <ul>
+      <ul className='gitem-index-container'>
         {
           this.props.gitems.map(gitem => (
             <GItemHolder key={gitem.id} gitem={gitem}/>

@@ -1,29 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 .list-menu{
   width: 260px;
   left: 0px;
   top: 30px;
   text-align: center;
+
+  font-family: 'Roboto', 'san-serif';
+  font-weight: 400 !important;
 }
 
 .list-container{
   display: flex;
   justify-content: space-between;
-  margin: 15px;
   height: calc(100vh - 81px);
   overflow: auto;
-  background-color: #A5D6A7;
+  background-color: #69F0AE;
 }
 
 .list-container-header{
-  margin-left: 20px;
+  margin-top: 15px;
+  margin-left: 35px;
   display: inline-block;
   position: relative;
+  font-family: 'Roboto', 'san-serif';
+  width: 250px;
 }
 
   .list-container-heading{
     font-family: 'Roboto', 'san-serif';
+    font-weight: 300;
+    color: #FAFAFA;
     display: inline-block;
   }
 

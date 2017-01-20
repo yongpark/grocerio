@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+
+.gitem-index-container{
+  position: relative;
+  list-style: none;
+  left: -40px;
+}
+
+.gitem-index-item{
+  border-radius: 3px !important;
+  background-color: #69F0AE !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', 'san-serif' !important;
+  width: 210px !important;
+}
+
+.gitem-create{
+  border-radius: 3px !important;
+  background-color: #69F0AE !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', 'san-serif' !important;
+  width: 210px !important;
+}
+
+.drop-target{
+  width: 210px;
+  height: 25px;
+}

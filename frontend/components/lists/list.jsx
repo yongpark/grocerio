@@ -10,8 +10,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 class List extends Component{
   componentDidMount(){
     this.props.fetchList(this.props.params.listId)
-    .then(() => this.props.fetchColumns(this.props.params.listId)
-    ,() => this.props.router.push('/boards'));
+    .then(() => this.props.fetchColumns(this.props.params.listId));
   }
 
   componentWillReceiveProps(newProps){

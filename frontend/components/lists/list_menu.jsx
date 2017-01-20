@@ -6,15 +6,17 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
+import {lightBlue300} from 'material-ui/styles/colors';
+import {grey50} from 'material-ui/styles/colors';
 
 const ListMenu = ({listId, deleteList, router}) => {
   return(
   <div className="list-menu">
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-      <Card>
-        <CardTitle title="List Menu"/>
+      <Card style={{backgroundColor: lightBlue300}}>
+        <CardTitle title="List Menu" titleStyle={{color: grey50, fontSize: 18}}/>
         <RaisedButton onClick={() => deleteList(listId)
-          .then(router.push('/lists'))} label="Delete List" secondary={true}/>
+          .then(router.push('/lists'))} label="Delete List" secondary={true} style={{fontWeight: 300}}/>
       </Card>
     </MuiThemeProvider>
   </div>

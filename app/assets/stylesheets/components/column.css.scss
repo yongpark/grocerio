@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+
 .column-index{
   display: flex;
   margin: 25px;
+
 }
 
 .column-index-item-container{
@@ -13,6 +16,14 @@
   text-decoration: none;
 }
 
+.column-index-item-container{
+  list-style: none;
+}
+
 .column-index-item{
+  border-radius: 3px !important;
+  background-color: #4FC3F7 !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', 'san-serif' !important;
 
 }

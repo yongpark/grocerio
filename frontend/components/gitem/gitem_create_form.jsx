@@ -83,9 +83,9 @@ class GItemCreateForm extends React.Component {
 
    render(){
      return(
-     <li onClick={this.show}>
+     <ul onClick={this.show} className='gitem-index-container'>
        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-         <Card className="list-box">
+         <Card className="gitem-create">
            <CardTitle title="Add a Grocery Item..."/>
          </Card>
        </MuiThemeProvider>
@@ -105,7 +105,7 @@ class GItemCreateForm extends React.Component {
            </MuiThemeProvider>
          </form>
        </div>
-     </li>
+     </ul>
    );
    }
 }

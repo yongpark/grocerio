@@ -8,6 +8,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import merge from 'lodash/merge';
+import {grey50} from 'material-ui/styles/colors';
+import {lightBlue300} from 'material-ui/styles/colors';
 
 class ListUpdateForm extends React.Component{
   constructor(props){
@@ -73,16 +75,19 @@ class ListUpdateForm extends React.Component{
         <div className="list-update-container" ref='update'>
           <form onSubmit={this.handleSubmit}>
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-              <Card>
-                <CardTitle title="Rename List" subtitle="List Name"/>
+              <Card style={{backgroundColor: lightBlue300}}>
+                <CardTitle title="Rename List" subtitle="List Name"  titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
                   <TextField
                     id="titleinput"
                     type="text"
                     value={this.state.list.title}
-                    placeholder="i.e. Weekly Grocery List"
+                    inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, }}
+                    floatingLabelStyle={{color: grey50, left: '10px'}}
+                    floatingLabelFocusStyle={{color: grey50}}
+                    floatingLabelText="i.e. Weekly Grocery List"
                     onChange={this.update('title')}
                   />
-                <RaisedButton type="submit" secondary={true} label="Update"/>
+                <RaisedButton type="submit" secondary={true} label="Update" labelStyle={{fontWeight: 400}}/>
               </Card>
             </MuiThemeProvider>
           </form>
