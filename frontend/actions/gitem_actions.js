@@ -24,10 +24,10 @@ export const createGItem = gitem => dispatch => (
   .then(newGItem => dispatch(receiveGItem(newGItem)))
 );
 
-export const fetchGItems = listId => dispatch => (
-  GItemAPIUtil.fetchGItems(listId)
-  .then(gitems => dispatch(receiveGItems(gitems)))
-);
+export const fetchGItems = listId => dispatch => {
+  return(GItemAPIUtil.fetchGItems(listId)
+  .then(gitems => dispatch(receiveGItems(gitems))));
+};
 
 export const fetchGItem = id => dispatch => (
   GItemAPIUtil.fetchGItem(id)

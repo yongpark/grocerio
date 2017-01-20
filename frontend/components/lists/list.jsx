@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import ListMenuContainer from './list_menu_container';
 import ColumnIndexContainer from '../column/column_index_container';
 import ListUpdateFormContainer from './list_update_form_container';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 
 class List extends Component{
@@ -39,4 +41,4 @@ class List extends Component{
   }
 }
 
-export default List;
+export default withRouter(DragDropContext(HTML5Backend)(List));

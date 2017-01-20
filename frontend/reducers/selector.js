@@ -18,8 +18,8 @@ export const selectColumns = state => (
 export const selectGItems = (state, columnId) => {
   columnId = parseInt(columnId);
   return Object.keys(state.gitems)
-  .map(id => state.gitems[id])
-  .filter(id => state.gitems[id].column_id == columnId)
+  .map(key => state.gitems[key])
+  .filter(gitem => gitem.column_id === columnId)
   .sort(ordSort);
 };
 

@@ -1,9 +1,9 @@
-export const fetchGItems = listId => (
-  $.ajax({
+export const fetchGItems = listId => {
+    return $.ajax({
     type: "GET",
     url: `api/lists/${listId}/gitems`
-  })
-);
+  });
+};
 
 export const fetchGItem = id => (
   $.ajax({

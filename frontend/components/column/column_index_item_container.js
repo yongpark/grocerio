@@ -8,7 +8,7 @@ const mapStateToProps = (state, {column}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateColumn: column => dispatch(updateColumn(column))
+  updateColumn: columnId => dispatch(updateColumn(columnId))
 });
 
 export default connect(

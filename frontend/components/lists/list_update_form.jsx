@@ -32,7 +32,6 @@ class ListUpdateForm extends React.Component{
 
   componentDidMount(){
     document.addEventListener('click', this.handleClickOutside, true);
-    console.log(this.props);
   }
 
   componentWillUnmount(){
@@ -69,7 +68,7 @@ class ListUpdateForm extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="list-update-form">
         <h2 className="list-container-heading" onClick={this.show}>{this.props.list.title}</h2>
         <div className="list-update-container" ref='update'>
           <form onSubmit={this.handleSubmit}>
@@ -80,7 +79,7 @@ class ListUpdateForm extends React.Component{
                     id="titleinput"
                     type="text"
                     value={this.state.list.title}
-                    placeholder="Weekly Grocery List"
+                    placeholder="i.e. Weekly Grocery List"
                     onChange={this.update('title')}
                   />
                 <RaisedButton type="submit" secondary={true} label="Update"/>

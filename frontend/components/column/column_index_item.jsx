@@ -6,8 +6,7 @@ import Paper from 'material-ui/Paper';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {Card, CardTitle} from 'material-ui/Card';
 import GItemCreateFormContainer from '../gitem/gitem_create_form_container';
-
-
+import GItemIndexContainer from '../gitem/gitem_index_container';
 
 
 const ColumnIndexItem = ({column, listId}) => (
@@ -16,6 +15,7 @@ const ColumnIndexItem = ({column, listId}) => (
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <Card className="column-index-item">
           <CardTitle title={column.title}/>
+          <GItemIndexContainer columnId={column.id} listId={listId}/>
           <GItemCreateFormContainer columnId={column.id}/>
         </Card>
       </MuiThemeProvider>
