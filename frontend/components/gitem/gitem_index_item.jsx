@@ -14,6 +14,7 @@ import merge from 'lodash/merge';
 import {grey50} from 'material-ui/styles/colors';
 import {lightBlue300} from 'material-ui/styles/colors';
 import {grey300} from 'material-ui/styles/colors';
+import DatePicker from 'material-ui/DatePicker';
 
 const gitemSource = {
   beginDrag: (props) => ({
@@ -116,28 +117,26 @@ class GItemIndexItem extends React.Component {
             <CardTitle title={this.state.gitem.title} titleStyle={{ fontSize: 18, color: grey50 }}/>
           </Card>
         </MuiThemeProvider>
-            <div className="gitem-update" ref='gitemupdate'>
-              <form onSubmit={this.handleSubmit}>
-                <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                  <Card className='gitem-edit-form'>
-                    <CardTitle title='Rename Grocery Item' titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
-                    <TextField
-                      id="titleinput"
-                      value={this.state.gitem.title}
-                      floatingLabelText="Grocery Item Name"
-                      hintText="Grocery Item Name"
-                      onChange={this.update('title')}
-                      inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, width:'100%'}}
-                      floatingLabelStyle={{color: grey50, left: '10px'}}
-                      floatingLabelFocusStyle={{color: grey50}}
-                      hintStyle={{color: grey50}}
-                      underlineStyle={{width: '200px', color:grey50}}
-                    />
-                  <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
-                  </Card>
-                </MuiThemeProvider>
-              </form>
-            </div>
+          <form onSubmit={this.handleSubmit} className="gitem-update" ref='gitemupdate'>
+            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+              <Card className='gitem-edit-form'>
+                <CardTitle title='Rename Grocery Item' titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
+                <TextField
+                  id="titleinput"
+                  value={this.state.gitem.title}
+                  floatingLabelText="Grocery Item Name"
+                  hintText="Grocery Item Name"
+                  onChange={this.update('title')}
+                  inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, width:'100%'}}
+                  floatingLabelStyle={{color: grey50, left: '10px'}}
+                  floatingLabelFocusStyle={{color: grey50}}
+                  hintStyle={{color: grey50}}
+                  underlineStyle={{width: '200px', color:grey50}}
+                />
+              <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
+              </Card>
+            </MuiThemeProvider>
+          </form>
       </section>
     );
   }

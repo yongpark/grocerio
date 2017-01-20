@@ -9,7 +9,8 @@ import {grey300} from 'material-ui/styles/colors';
 
 const style = {
   width: "300px",
-  height: "50px"
+  height: "50px",
+  borderRadius: '3px'
 };
 
 const labelstyle={

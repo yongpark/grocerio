@@ -9,6 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import {grey50} from 'material-ui/styles/colors';
+import DatePicker from 'material-ui/DatePicker';
 
 class GItemCreateForm extends React.Component {
   constructor(props){
@@ -20,7 +21,6 @@ class GItemCreateForm extends React.Component {
 
     this.show = this.show.bind(this);
     this.hide = this.hide.bind(this);
-    this.close = this.close.bind(this);
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -61,19 +61,23 @@ class GItemCreateForm extends React.Component {
      });
    }
 
-   close(e){
-     e.stopPropagation();
-     this.hide();
-   }
 
-   update(prop){
+  update(prop){
+    return e => {
+      const gitem = merge({}, this.state.gitem, {
+        [prop]: e.target.value
+      });
+      this.setState({gitem});
+    };
+  }
+
+   updateDate(e, date){
      return e => {
-       const gitem = merge({}, this.state.gitem, {
-         [prop]: e.target.value
-       });
+       const gitem = merge({}, this.state.gitem, {expire_date: date});
        this.setState({gitem});
      };
    }
+
 
    handleSubmit(e){
      e.preventDefault();
@@ -101,6 +105,9 @@ class GItemCreateForm extends React.Component {
                    placeholder="Add a Grocery Item"
                    onChange={this.update('title')}
                  />
+                <DatePicker hintText="Enter Expiration Date"
+                  value={this.state.gitem.expire_date}
+                  onChange={this.updateDate}/>
              <RaisedButton type="submit" secondary={true} label="Save"/>
            </Card>
            </MuiThemeProvider>
