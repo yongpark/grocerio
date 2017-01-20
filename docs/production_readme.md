@@ -113,7 +113,7 @@ Reap karma from shairing your profile page and how much money you saved.
 - Authentication integration with Facebook and Google+
 
 [grocero]: https://grocero.herokuapp.com/
-[home page]: ./images/home_page.png "Grocero Home page"
+[home page]: ./images/homepage.png "Grocero Home page"
 [lists]: ./images/lists_page.png "Grocery List Page"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
