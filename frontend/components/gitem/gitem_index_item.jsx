@@ -11,6 +11,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import merge from 'lodash/merge';
+import {grey50} from 'material-ui/styles/colors';
+import {lightBlue300} from 'material-ui/styles/colors';
+import {grey300} from 'material-ui/styles/colors';
 
 const gitemSource = {
   beginDrag: (props) => ({
@@ -91,7 +94,7 @@ class GItemIndexItem extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateGItem(this.state.gitem).then(this.hide);
+    this.props.updateGItem(this.state.gitem).then(this.hide());
   }
 
   render(){
@@ -108,23 +111,28 @@ class GItemIndexItem extends React.Component {
             className={gitemClass}
             onMouseEnter={this.activate(true)}
             onMouseLeave={this.activate(false)}
-            className="gitem-index-item">
-            <CardTitle title={this.state.gitem.title}/>
-            <RaisedButton onClick={this.show} secondary={true} style={{fontWeight: 300}} label="Edit"/>
+            className="gitem-index-item"
+            onClick={this.show}>
+            <CardTitle title={this.state.gitem.title} titleStyle={{ fontSize: 18, color: grey50 }}/>
           </Card>
         </MuiThemeProvider>
-            <div ref='gitemupdate'>
+            <div className="gitem-update" ref='gitemupdate'>
               <form onSubmit={this.handleSubmit}>
                 <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-                  <Card>
-                    <CardTitle title='Rename Grocery Item'/>
+                  <Card className='gitem-edit-form'>
+                    <CardTitle title='Rename Grocery Item' titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
                     <TextField
                       id="titleinput"
                       value={this.state.gitem.title}
-                      placeholder="Grocery Item Name"
+                      floatingLabelText="Grocery Item Name"
+                      hintText="Grocery Item Name"
                       onChange={this.update('title')}
+                      inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, width: 200}}
+                      floatingLabelStyle={{color: grey50, left: '10px'}}
+                      floatingLabelFocusStyle={{color: grey50}}
+                      hintStyle={{color: grey50}}
                     />
-                  <RaisedButton type="submit" secondary={true} label="update"/>
+                  <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
                   </Card>
                 </MuiThemeProvider>
               </form>

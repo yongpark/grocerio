@@ -87,7 +87,7 @@ class GItemCreateForm extends React.Component {
      <ul onClick={this.show} className='gitem-index-container'>
        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
          <Card className="gitem-create">
-           <CardTitle title="Add a Grocery Item..." titleStyle={{ fontSize: 18, color: grey50, marginBottom: '1000px'}}/>
+           <CardTitle title="Add a Grocery Item..." titleStyle={{ fontSize: 18, color: grey50}}/>
          </Card>
        </MuiThemeProvider>
        <div className="list-create-container" ref='create2'>

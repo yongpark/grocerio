@@ -65,7 +65,7 @@ class ListUpdateForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateList(this.state.list).then(this.hide);
+    this.props.updateList(this.state.list).then(this.hide());
   }
 
   render(){
