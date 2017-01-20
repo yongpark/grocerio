@@ -3,10 +3,11 @@
 # Table name: g_items
 #
 #  id          :integer          not null, primary key
-#  title       :integer          not null
+#  title       :string           not null
 #  column_id   :integer          not null
 #  expire_date :date
 #  expired     :boolean          default("false"), not null
+#  ord         :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -34,6 +35,7 @@ class GItem < ApplicationRecord
   )
 
   before_validation :ensure_ord
+  after_validation :handle_ord_change
 
   def ensure_ord
     unless self.ord
@@ -78,7 +80,7 @@ class GItem < ApplicationRecord
     super
   end
 
-  def handle_ord_chnage
+  def handle_ord_change
     unless self.changed_attributes["column_id"]
       if self.changed.include?("ord")
         if self.changed_attributes["ord"]

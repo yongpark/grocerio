@@ -8,6 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
+import {grey50} from 'material-ui/styles/colors';
 
 class GItemCreateForm extends React.Component {
   constructor(props){
@@ -86,14 +87,14 @@ class GItemCreateForm extends React.Component {
      <ul onClick={this.show} className='gitem-index-container'>
        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
          <Card className="gitem-create">
-           <CardTitle title="Add a Grocery Item..."/>
+           <CardTitle title="Add a Grocery Item..." titleStyle={{ fontSize: 18, color: grey50, marginBottom: '1000px'}}/>
          </Card>
        </MuiThemeProvider>
        <div className="list-create-container" ref='create2'>
          <form onSubmit={this.handleSubmit}>
            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
              <Card>
-               <CardTitle className="card-subtitle" title="Grocery Item" subtitle="Grocery Name"/>
+               <CardTitle className="card-subtitle" title="Grocery Item" subtitle="Grocery Name" titleStyle={{ fontSize: 18, color: grey50 }}/>
                  <TextField
                    id="titleinput"
                    type="text"
