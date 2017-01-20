@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 .lists-index {
   position: absolute;
@@ -9,8 +9,15 @@
   padding: 2.2em 0.8em;
   font-size: 16px;
   font-weight: bold;
-  background-color: #fff;
+  background-color: #E0E0E0;
   font-family: 'Roboto', 'san-serif';
+}
+
+.list-index-item{
+  font-family: 'Roboto', 'san-serif' !important;
+  background-color: #4FC3F7 !important;
+  font-weight: 300 !important;
+
 }
 
 
@@ -27,15 +34,33 @@
   width: 250px;
   height: 125px;
   margin-right: 20px;
+  padding-top: 40px;
   margin-top: 20px;
   border-radius: 3px;
   text-decoration: none;
   cursor: pointer;
-  font-family: 'Roboto', 'san-serif';
+}
+
+.list-card{
+  position: relative;
+  display: block;
+  width: 250px;
+  height: 125px;
+  border-radius: 3px !important;
+  background-color: #4FC3F7 !important;
+  font-weight: 300 !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-subtitle{
+  font-size: 16px !important;
 }
 
 .lists-index-header{
   font-family: 'Roboto', 'san-serif';
+  color: #29B6F6;
+  font-weight: 400;
 }
 
 .list-create-container {
@@ -52,9 +77,13 @@
   font-family: 'Roboto', 'san-serif';
   text-align: center;
 
-
-  bottom: -15%;
-  top: -1%;
-  left: -1%;
+  bottom: -25%;
+  top: 12%;
+  left: 0%;
   right: -2%;
+}
+
+.list-create{
+  background-color: #4FC3F7 !important;
+  font-weight: 300 !important;
 }

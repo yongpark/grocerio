@@ -4,13 +4,14 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {grey50} from 'material-ui/styles/colors';
 
 const ListIndexItem = ({list}) => (
   <li className='list-box'>
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-      <Link to={`/lists/${list.id}`}  style={{ textDecoration: 'none' }}>
-        <Card className="list-box">
-          <CardTitle title={list.title}/>
+      <Link to={`/lists/${list.id}`} style={{ textDecoration: 'none' }}>
+        <Card className="list-card">
+          <CardTitle title={list.title} titleStyle={{ fontSize: 18, color: grey50 }}/>
         </Card>
       </Link>
     </MuiThemeProvider>

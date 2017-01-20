@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+
 .session-button{
   position: relative;
-  margin-left: 70px; 
+  margin-left: 70px;
+  font-weight: 300 !important;
+}
+
+.navbar{
+  background-color: #4FC3F7 !important;
+  font-family: 'Roboto', 'san-serif' !important;
 }

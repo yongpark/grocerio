@@ -8,10 +8,9 @@ import SessionButtonContainer from './session_form/session_button_container';
 import SessionFormContainer from './session_form/session_form_container';
 
 const navbarStyle = {
-  backgroundColor: '#FF3D00',
-  width: '100%',
   title: {
    cursor: 'pointer',
+   fontWeight: 300 
  },
 };
 
@@ -33,8 +32,8 @@ class NavBar extends React.Component{
   render(){
     const handleClick = url => () => hashHistory.push(url);
     return(
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)} className="navbar">
-        <AppBar onTitleTouchTap={handleTouchTap} title={<span style={navbarStyle.title} >Grocero</span>} >
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        <AppBar onTitleTouchTap={handleTouchTap} className="navbar" title={<span style={navbarStyle.title} >Grocero</span>} >
           <SessionButtonContainer/>
           <SessionFormContainer/>
         </AppBar>

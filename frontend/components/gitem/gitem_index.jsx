@@ -1,5 +1,6 @@
 import React from 'react';
 import GItemHolder from './gitem_holder';
+import GItemTarget from './drop_target';
 
 class GItemIndex extends React.Component{
 
@@ -13,8 +14,8 @@ class GItemIndex extends React.Component{
         {
           this.props.gitems.map(gitem => (
             <GItemHolder key={gitem.id} gitem={gitem}/>
-          ))
-        }
+          ))}
+          <GItemTarget columnId={this.props.columnId} gitems={this.props.gitems}/>
       </ul>
     );
   }

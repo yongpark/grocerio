@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import merge from 'lodash/merge';
+import {grey50} from 'material-ui/styles/colors';
 
 
 class ListCreateForm extends React.Component{
@@ -72,20 +73,23 @@ class ListCreateForm extends React.Component{
     return(
       <li className='list-box' onClick={this.show}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Card className="list-box">
-            <CardTitle title="Create a new list..."/>
+          <Card className="list-card">
+            <CardTitle title="Create a new list..."  titleStyle={{ fontSize: '18px', color: grey50}}/>
           </Card>
         </MuiThemeProvider>
         <div className="list-create-container" ref='create'>
           <form onSubmit={this.handleSubmit}>
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-              <Card>
-                <CardTitle className="card-subtitle" title="Grocery List Name" subtitle="List Name"/>
+              <Card className='list-create'>
+                <CardTitle className="card-subtitle" title="New Grocery List" subtitle="Grocery List Name" titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
                 <TextField
                   id="titleinput"
                   type="text"
-                  placeholder="Weekly Grocery List"
+                  floatingLabelText="Weekly Grocery List"
                   onChange={this.update('title')}
+                  inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, }}
+                  floatingLabelStyle={{color: grey50}}
+                  floatingLabelFocusStyle={{color: grey50}}
                 />
               <RaisedButton type="submit" secondary={true} label="Create"/>
             </Card>

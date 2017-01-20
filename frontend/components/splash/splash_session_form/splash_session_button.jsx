@@ -4,11 +4,20 @@ import {FlatButton, RaisedButton, TextField} from 'material-ui';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {lightBlue300} from 'material-ui/styles/colors';
+import {grey300} from 'material-ui/styles/colors';
 
 const style = {
-  width: "200px"
+  width: "300px",
+  height: "50px"
 };
 
+const labelstyle={
+  paddingTop: '10%',
+  top: '12px',
+  fontWeight: 400,
+  color: lightBlue300
+};
 
 class SplashSessionButton extends React.Component{
   constructor(props){
@@ -29,7 +38,8 @@ class SplashSessionButton extends React.Component{
       return(
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <RaisedButton label="sign up"
-            onClick={this.props.openAuthModal}  style={style} className="splash-session-button"/>
+            onClick={this.props.openAuthModal}  labelStyle={labelstyle}
+            style={style} className="splash-session-button"/>
         </MuiThemeProvider>
       );
     }
