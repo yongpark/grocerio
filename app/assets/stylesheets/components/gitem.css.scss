@@ -23,6 +23,7 @@
   width: 200px !important;
   height: 50px !important;
   margin-left: 5px !important;
+  margin-bottom: 50px;
 }
 
 .drop-target{
@@ -34,6 +35,11 @@
   position: absolute !important;
   border-radius: 3px !important;
   background-color: #03A9F4 !important;
-  bottom: 70px !important;
+  bottom: 30px !important;
   width: 200px !important;
+  margin-left: 5px !important;
+}
+
+.gitem-holder{
+  margin-bottom: 7px;
 }

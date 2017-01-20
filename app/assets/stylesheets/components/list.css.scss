@@ -38,6 +38,15 @@
     background-color: #29B6F6;
   }
 
+.drag-drop-hint{
+  position: absolute;
+  color: #FAFAFA;
+  font-family: 'Roboto', 'san-serif';
+  font-weight: 300;
+  font-size: 16px;
+  top: 40px;
+}
+
 .card-subtitle{
   text-align: left;
 }

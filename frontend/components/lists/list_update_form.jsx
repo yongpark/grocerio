@@ -72,6 +72,7 @@ class ListUpdateForm extends React.Component{
     return(
       <div className="list-update-form">
         <h2 className="list-container-heading" onClick={this.show}>{this.props.list.title}</h2>
+        <h2 className='drag-drop-hint'>Drag and Drop Grocery Items</h2>
         <div className="list-update-container" ref='update'>
           <form onSubmit={this.handleSubmit}>
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>

@@ -127,10 +127,11 @@ class GItemIndexItem extends React.Component {
                       floatingLabelText="Grocery Item Name"
                       hintText="Grocery Item Name"
                       onChange={this.update('title')}
-                      inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, width: 200}}
+                      inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, width:'100%'}}
                       floatingLabelStyle={{color: grey50, left: '10px'}}
                       floatingLabelFocusStyle={{color: grey50}}
                       hintStyle={{color: grey50}}
+                      underlineStyle={{width: '200px', color:grey50}}
                     />
                   <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
                   </Card>

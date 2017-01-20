@@ -41,7 +41,7 @@ const collect = (dndConnect) => ({
 
 const GItemHolder = ({gitem, disabled, connectDropTarget}) => (
   connectDropTarget(
-    <li>
+    <li className="gitem-holder">
       <GItemIndexItemContainer gitem={gitem} disabled={disabled}/>
     </li>
   )
