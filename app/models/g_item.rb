@@ -34,7 +34,7 @@ class GItem < ApplicationRecord
     source: :list,
   )
 
-  before_validation :ensure_ord
+
   after_validation :handle_ord_change
 
   def self.update_other_ords(column_id, old_ord, new_ord)
@@ -76,12 +76,6 @@ class GItem < ApplicationRecord
 
   private
 
-  def ensure_ord
-    unless self.ord
-      self.ord = next_ord
-    end
-  end
-  
   def handle_ord_change
     unless self.changed_attributes["column_id"]
       if self.changed.include?("ord")
