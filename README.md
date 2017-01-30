@@ -1,67 +1,119 @@
 # Grocero
 
-[Heroku link][heroku]
+[Grocero][grocero] is a web application that allows users to add grocery items to a list and tracks their expiration date. Grocero's design was inspired by Trello, allowing users to drag and drop grocery items from one column to another. The application uses the grocery item's expiration date, recommending recipes before the grocery items expire and automatically moving items to the expired column when they expire.
 
-[Trello link][trello]
+Grocero is a Yong Park's a/A capstone project.
 
-[heroku]: https://grocero.herokuapp.com/
-[trello]: https://trello.com/b/5o8wTudK/grocerio
+![Grocero home page: http://www.grocero.com][home page]
 
-## Minimum Viable Product
+## Features
 
-Grocer.io is a web application based on Trello built using Ruby on Rails and React/Redux. This app will satisfy the following MVP requirements:
+- User accounts with secure authentication
+- Create grocery lists
+- Automatically creates separate columns when users create lists
+- Add new grocery items to "To Buy" and "Bought"
+- Add expiration dates to grocery items.
+- Expired grocery items automatically move to the expired column.
+- Recipes are recommended based on items in the "Bought" column that are close to expiring.
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Create new grocery lists
-- [ ] Add grocery items to the "To Buy" column.
-- [ ] Click grocery item pops up modal to allowing users to delete grocery items from any* column
-- [ ] Users can drag and drop card from the "To Buy" and drop them into the "Bought" column + add an expiration date. They can then move items from the "Bought" column to the "Used column"
-- [ ] Spoonacular API displays recipes with "soon-to-expire" (< x days left) ingredients
-- [ ] Production README [sample](docs/production_readme.md)
+![List Page: https://grocero.herokuapp.com/#/lists][lists]
 
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+## Project Design
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+Grocero was designed and built in three weeks.
 
-## Implementation Timeline
+A [proposal][proposal] was used to provide a timeline during the dev process.
+was drafted to help provide an implementation timeline during the development process.
 
-### Phase 1: Backend setup and Front End User Authentication (1 day)
+A [database schema][schema] was included along with the proposal.
 
-**Objective:** Functioning rails project with front-end Authentication
+## Technology
 
-### Phase 2: Lists Model, API, and components (1-2 days)
+Grocero is a single-page application built on Rails and React.js with dependencies on the frontend and backend including Material UI, React DnD, and Moment.js.
 
-**Objective:** List can be created, read, edited and destroyed through
-the API.
+# Backend Technology
+Grocero runs on Ruby on Rails and is hosted on Heroku. The purpose of the backend is to provide RESTful APIs and respond with JSON-formatted data.
 
-### Phase 3: Columns, model, API, and components (1-2 days)
+## Heroku
+NewRelic application performance management (APM) is used to automatically ping the Heroku dyno, allowing for faster response times.
 
-**Objective:** Columns can be read through the API. Start looking into drag and drop functionality.
+NewRelic also keeps track of server-side error logs.
 
-### Phase 4: GItems Model, API, and Components (2 days)
+## Database
+PostgreSQL RDMBS is used for Heroku.
 
-**Objective:** GItems can be created, read, edited, and destroyed through the API. Includes GItemDetailContainer.
+## Dependencies
 
-### Phase 5: Allow Drag and Drop for GItems (2 days, W2 Th 6pm)
+Notable dependencies include:
 
-**objective:** Drag and drop functionality for moving GItems between columns.
+- BCrypt for password-salting and hashing for a secure authentication system
+- Moment.js for parsing and standardizing expiration dates for grocery items.
 
-### Phase 6: - Spoonacular API + Component and Styling (2 days, W2 F 6pm)
+# Frontend Technology
+Grocero uses the React.js framework and the Redux architecture to manage data flow through the frontend.
 
-**objective:** Add Recipe Component to Lists Component. Style.
+## npm
 
-### Bonus Features (TBD)
-- [ ] Items that expire will automatically move to the "Expired" column
-- [ ] Recipe pages that aggregates expiring items on all lists
-- [ ] User profile page w/ stats displaying # of items that user let expire
-- [ ] Search for lists
+Use NPM to install all the frontend dependencies.
+
+A install script is configured so that webpack bundles all the front end files after deploying to Heroku.
+
+## Webpack
+
+Webpack bundles all frontend components. The bundled file is in `/app/assets/javascripts`.
+
+
+## React & Redux
+
+All React components, Redux thunk action creators, API utilities, dispatchers, and stores are located in the [frontend](../frontend) directory.
+
+## jQuery
+
+jQuery is used to make the AJAX requests with the Rails server.
+
+
+## Material UI
+Site layout and styling is done through custom CSS and the use of the NPM Material UI library. Material UI was useful for speeding up the build process of React components.
+
+## React DND
+React's drag and drop library allows for easy movement between columns for grocery items inside each list.
+
+## Others
+
+Other frontend dependencies are:
+
+- React DOM
+- React Router
+- React History to manipulating the browser history
+- React Linked State Mixin
+- Babel for transpiling JSX into JavaScript.
+
+# Future Implementations
+
+## Recipes Page
+Users will be able to aggregate expiring items for all grocery lists for a larger pool of ingredients for their Recipes
+
+## User Page
+- Users will be able to track how many grocery items expired and how how efficient they are with their grocery purchases.
+- Tracks through Amazon API how much money you saved and wasted.
+
+## Mobile
+Users will be able to use this application on their mobile devices for on-the-fly changes to their grocery lists while shopping because of mobile responsiveness.
+
+## Search
+Users will be able to search through their lists by name.
+
+## Sharing
+Reap karma from shairing your profile page and how much money you saved.
+
+## Other Features
+
+- Account activation via email
+- Client session on multiple browsers (multiple session)
+- Authentication integration with Facebook and Google+
+
+[grocero]: https://grocero.herokuapp.com/
+[home page]: ./images/homepage.png "Grocero Home page"
+[lists]: ./images/lists_page.png "Grocery List Page"
+[proposal]: ./docs/proposal.md
+[schema]: ./docs/schema.md
