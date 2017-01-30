@@ -65,7 +65,7 @@ Webpack bundles all frontend components. The bundled file is in `/app/assets/jav
 
 ## React & Redux
 
-All React components, Redux thunk action creators, API utilities, dispatchers, and stores are located in the [frontend](../frontend) directory.
+All React components, Redux thunk action creators, API utilities, dispatchers, and stores are located in the [frontend](./frontend) directory.
 
 ## jQuery
 
@@ -113,7 +113,7 @@ Reap karma from shairing your profile page and how much money you saved.
 - Authentication integration with Facebook and Google+
 
 [grocero]: https://grocero.herokuapp.com/
-[home page]: ./images/homepage.png "Grocero Home page"
-[lists]: ./images/lists_page.png "Grocery List Page"
+[home page]: ./docs/images/homepage.png "Grocero Home page"
+[lists]: ./docs/images/lists_page.png "Grocery List Page"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
