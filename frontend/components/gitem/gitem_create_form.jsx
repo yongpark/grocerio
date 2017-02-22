@@ -10,6 +10,8 @@ import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import {grey50} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
+import moment from 'moment';
+
 
 class GItemCreateForm extends React.Component {
   constructor(props){
@@ -25,6 +27,8 @@ class GItemCreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.updateDate = this.updateDate.bind(this);
+    this.handleDatepickerOnShow = this.handleDatepickerOnShow.bind(this);
+    this.handleDatepickerOnClose = this.handleDatepickerOnClose.bind(this);
   }
 
    componentDidMount() {
@@ -38,6 +42,10 @@ class GItemCreateForm extends React.Component {
    }
 
    handleClickOutside(event) {
+     console.log(this.datepickerOpen);
+     if (this.datepickerOpen) {
+       return;
+     }
      const domNode = ReactDOM.findDOMNode(this);
      if (!domNode || !domNode.contains(event.target)) {
          this.hide();
@@ -70,6 +78,7 @@ class GItemCreateForm extends React.Component {
 
   update(prop){
     return e => {
+      console.log(e);
       const gitem = merge({}, this.state.gitem, {
         [prop]: e.target.value
       });
@@ -79,14 +88,13 @@ class GItemCreateForm extends React.Component {
   }
 
    updateDate(e, date){
-     const gitem = merge({}, this.state.gitem, {expire_date: date});
+     console.log(date);
+     let formattedDate = moment(date).format("YYYY-MM-DD");
+     console.log(formattedDate);
+     const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
      this.setState({gitem});
-     debugger;
+    //  debugger;
    }
-
-
-
-
 
    handleSubmit(e){
      console.log();
@@ -94,6 +102,14 @@ class GItemCreateForm extends React.Component {
      if(this.state.gitem){
        this.props.createGItem(this.state.gitem).then(this.hide);
      }
+   }
+
+   handleDatepickerOnShow(e){
+     this.datepickerOpen = true;
+   }
+
+   handleDatepickerOnClose(e){
+     this.datepickerOpen = false;
    }
 
    render(){
@@ -115,7 +131,10 @@ class GItemCreateForm extends React.Component {
                    placeholder="Add a Grocery Item"
                    onChange={this.update('title')}
                  />
-               <input type="date" onChange={this.update('expire_date')}/>
+               <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepickerOnShow}
+               onChange={this.updateDate}
+               onDismiss={this.handleDatepickerOnClose}
+               container="inline" mode="landscape"/>
              <RaisedButton type="submit" secondary={true} label="Save"/>
            </Card>
            </MuiThemeProvider>
