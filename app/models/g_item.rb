@@ -82,6 +82,24 @@ class GItem < ApplicationRecord
     end
   end
 
+  def handle_column_change
+    old_column_id = self.changed_attributes['column_id']
+
+    if old_column_id
+      if seelf.changed.include?('ord')
+        old_ord = self.changed_attributes['ord']
+      else
+        old_ord = self.ord
+      end
+      new_ord = GItem.max_ord(old_column_id)
+      GItem.update_other_ords(old_column_id, old_ord, new_ord)
+      new_column_id = self.column_id
+      new_ord = self.ord
+      old_ord = GItem.next_ord(new_column_id)
+      GItem.update_other_ords(new_column_id, old_ord, new_ord)
+    end
+  end
+
   def handle_ord_change
     unless self.changed_attributes["column_id"]
       if self.changed.include?("ord")
