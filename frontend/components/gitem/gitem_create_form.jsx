@@ -82,7 +82,6 @@ class GItemCreateForm extends React.Component {
       const gitem = merge({}, this.state.gitem, {
         [prop]: e.target.value
       });
-      debugger;
       this.setState({gitem});
     };
   }
@@ -112,7 +111,10 @@ class GItemCreateForm extends React.Component {
      this.datepickerOpen = false;
    }
 
+  //  this.renderCreateForm = this.state.gitem.column_title === 'To Buy' || this.state.gitem.column_title === 'Bought'
+
    render(){
+     if(this.state.gitem.column_title === 'To Buy' || this.state.gitem.column_title === 'Bought'){
      return(
      <ul onClick={this.show} className='gitem-index-container'>
        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
@@ -141,8 +143,11 @@ class GItemCreateForm extends React.Component {
          </form>
        </div>
      </ul>
+   );}
+   return(
+     <ul></ul>
    );
-   }
+  }
 }
 
 export default GItemCreateForm;

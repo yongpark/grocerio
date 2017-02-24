@@ -17,7 +17,7 @@ const ColumnIndexItem = ({column, listId}) => (
         <Card className="column-index-item">
           <CardTitle title={column.title} titleStyle={{ fontSize: 18, color: grey50 }}/>
           <GItemIndexContainer columnId={column.id} listId={listId}/>
-          <GItemCreateFormContainer columnId={column.id}/>
+          <GItemCreateFormContainer columnId={column.id} columnTitle={column.title}/>
         </Card>
       </MuiThemeProvider>
     </ul>
