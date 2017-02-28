@@ -9,10 +9,10 @@ class Splash extends React.Component{
       <div>
         <div className="home">
           <div className="main-text">
-            Grocero is a smart grocery list that saves you money
+            Grocerio is a smart grocery list that saves you money
           </div>
           <div className="main-description">
-            Grocero is a smart to-do list that recommends delicious meals before your expire, saving you money and helping you discover tasty new recipes!
+            Grocerio is a smart to-do list that recommends delicious meals before your expire, saving you money and helping you discover tasty new recipes!
           </div>
           <SplashSessionButtonContainer/>
           <SplashSessionFormContainer/>
