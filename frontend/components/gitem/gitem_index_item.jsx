@@ -59,7 +59,7 @@ class GItemIndexItem extends React.Component {
   expired(){
     let date = moment();
     let gitemdate = moment(this.state.gitem.expire_date);
-    if (date.diff(gitemdate, 'days') < 7){
+    if (date.diff(gitemdate, 'days') === 0){
       if (this.state.gitem.column.title == "To Buy"){
         var updatedGItem = this.state.gitem;
         updatedGItem.column_id = updatedGItem.column_id + 2;
