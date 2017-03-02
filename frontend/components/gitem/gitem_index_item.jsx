@@ -58,17 +58,19 @@ class GItemIndexItem extends React.Component {
 
   expired(){
     let date = moment();
-    // let formattedDate = moment(date).format("YYYY-MM-DD");
     let gitemdate = moment(this.state.gitem.expire_date);
-    console.log(date.diff(gitemdate, 'days'));
-    // if (this.state.gitem.expire_date === formattedDate){
-    //   // action to update db
-    //   if(this.state.gitem.expired === true){
-    //     console.log(this.state.gitem.column);
-    //
-    //     console.log(this.state.gitem.expired);
-    //   }
-    // }
+    if (date.diff(gitemdate, 'days') < 7){
+      if (this.state.gitem.column.title == "To Buy"){
+        var updatedGItem = this.state.gitem;
+        updatedGItem.column_id = updatedGItem.column_id + 2;
+        this.props.updateGItem(updatedGItem);
+      }
+      if (this.state.gitem.column.title == "Bought"){
+        var updatedGItem = this.state.gitem;
+        updatedGItem.column_id = updatedGItem.column_id + 1;
+        this.props.updateGItem(updatedGItem);
+      }
+    }
   }
 
   handleClickOutside(e){
