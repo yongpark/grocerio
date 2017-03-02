@@ -15,6 +15,7 @@ import {grey50} from 'material-ui/styles/colors';
 import {lightBlue300} from 'material-ui/styles/colors';
 import {grey300} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
+import moment from 'moment';
 
 const gitemSource = {
   beginDrag: (props) => ({
@@ -48,10 +49,26 @@ class GItemIndexItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.activate = this.activate.bind(this);
+    this.expired = this.expired.bind(this);
   }
 
   activate(active){
     return e => this.setState({active});
+  }
+
+  expired(){
+    let date = moment();
+    // let formattedDate = moment(date).format("YYYY-MM-DD");
+    let gitemdate = moment(this.state.gitem.expire_date);
+    console.log(date.diff(gitemdate, 'days'));
+    // if (this.state.gitem.expire_date === formattedDate){
+    //   // action to update db
+    //   if(this.state.gitem.expired === true){
+    //     console.log(this.state.gitem.column);
+    //
+    //     console.log(this.state.gitem.expired);
+    //   }
+    // }
   }
 
   handleClickOutside(e){
@@ -64,6 +81,7 @@ class GItemIndexItem extends React.Component {
   componentDidMount(){
     this.refs.gitemupdate.style.display = 'none';
     document.addEventListener('click', this.handleClickOutside, true);
+    this.expired();
   }
 
   componentWillUnmount(){
