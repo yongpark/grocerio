@@ -5,6 +5,7 @@ import ColumnIndexContainer from '../column/column_index_container';
 import ListUpdateFormContainer from './list_update_form_container';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import RecipeContainer from '../recipes/recipe_container';
 
 
 class List extends Component{
@@ -35,6 +36,7 @@ class List extends Component{
             </div>
         </div>
         <ListMenuContainer listId={listId}/>
+        <RecipeContainer listId={listId}/>
       </div>
     );
   }
