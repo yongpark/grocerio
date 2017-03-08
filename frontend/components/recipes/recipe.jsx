@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import Paper from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Card, CardTitle} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
