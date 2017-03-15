@@ -67,13 +67,13 @@ class SplashSessionForm extends React.Component{
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={splashButtonName} className="form" titleStyle={{fontWeight: 300, color: lightBlue300}}>
             <form onSubmit={this.handleSubmit}>
-              <TextField type="text" floatingLabelText="Username" hintText="Username" errorText={this.props.errors.username === undefined ? "" : "Username is required"} value={this.state.username}  onChange={this.update("username")} fullWidth={true}
+              <TextField type="text" floatingLabelText="Username" hintText="Username" errorText={this.props.errors.username === undefined ? "" : `username ${this.props.errors.username.join(", ")}`} value={this.state.username}  onChange={this.update("username")} fullWidth={true}
                 inputStyle={{color: lightBlue300, }}
                 floatingLabelStyle={{color: lightBlue300}}
                 floatingLabelFocusStyle={{color: lightBlue300}}
                 hintStyle={{color: grey300}}/>
               <br/>
-              <TextField type="password" hintText="Password" floatingLabelText="Password" value={this.state.password} onChange={this.update("password")} fullWidth={true} errorText={this.props.errors.password === undefined ? "" : "Password is required"}
+              <TextField type="password" hintText="Password" floatingLabelText="Password" value={this.state.password} onChange={this.update("password")} fullWidth={true} errorText={this.props.errors.password === undefined ? "" :  this.props.errors.password.join(", ")}
                 inputStyle={{color: lightBlue300, }}
                 floatingLabelStyle={{color: lightBlue300}}
                 floatingLabelFocusStyle={{color: lightBlue300}}
