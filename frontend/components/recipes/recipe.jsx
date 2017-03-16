@@ -17,6 +17,7 @@ class Recipe extends Component{
   }
 
   render(){
+    console.log(this.props.columns);
     return(
       <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>

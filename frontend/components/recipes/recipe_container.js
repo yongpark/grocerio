@@ -1,11 +1,13 @@
 import {connect} from 'react-redux';
 import Recipe from './recipe';
 import {fetchList} from '../../actions/list_actions';
-import {selectList} from '../../reducers/selector';
+import {selectList, selectColumns} from '../../reducers/selector';
 import {fetchColumns} from '../../actions/column_actions';
 
+
 const mapStateToProps = (state, ownProps) => ({
-  list: selectList(state, ownProps.listId)
+  list: selectList(state, ownProps.listId),
+  columns: selectColumns(state)
 });
 
 const mapDispatchToProps = dispatch => ({
