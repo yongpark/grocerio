@@ -7,24 +7,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 
 class Recipe extends Component{
+  constructor(props){
+    super(props);
+    this.nearExpiration = this.nearExpiration.bind(this);
+  }
+
   componentDidMount(){
     this.props.fetchList(this.props.listId)
-    .then(() => this.props.fetchColumns(this.props.listId));
+    .then(() => this.props.fetchColumns(this.props.listId)).then(() => this.nearExpiration());
   }
 
   nearExpiration(){
-
-  }
-
-  render(){
-    // if (this.props.columns.title == "To Buy" || this.props.columns.title == "Bought"){
-    //   console.log("true");
-    // }
     for (var i = 0; i < this.props.columns.length; i++) {
       if (this.props.columns[i].title == "To Buy" || this.props.columns[i].title == "Bought"){
         console.log("true");
       }
     }
+  }
+  render(){
     return(
       <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
