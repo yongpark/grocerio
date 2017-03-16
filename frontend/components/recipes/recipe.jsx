@@ -17,7 +17,14 @@ class Recipe extends Component{
   }
 
   render(){
-    console.log(this.props.columns);
+    // if (this.props.columns.title == "To Buy" || this.props.columns.title == "Bought"){
+    //   console.log("true");
+    // }
+    for (var i = 0; i < this.props.columns.length; i++) {
+      if (this.props.columns[i].title == "To Buy" || this.props.columns[i].title == "Bought"){
+        console.log("true");
+      }
+    }
     return(
       <div>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
