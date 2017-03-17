@@ -20,7 +20,7 @@ class Recipe extends Component{
   nearExpiration(){
     for (var i = 0; i < this.props.columns.length; i++) {
       if (this.props.columns[i].title == "To Buy" || this.props.columns[i].title == "Bought"){
-        console.log("true");
+        console.log(this.props.columns[i].gitems);
       }
     }
   }
