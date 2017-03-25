@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Card, CardTitle} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import moment from 'moment';
 
 class Recipe extends Component{
   constructor(props){
@@ -20,7 +21,14 @@ class Recipe extends Component{
   nearExpiration(){
     for (var i = 0; i < this.props.columns.length; i++) {
       if (this.props.columns[i].title == "To Buy" || this.props.columns[i].title == "Bought"){
-        console.log(this.props.columns[i].gitems.expired < 10);
+        for (var j = 0; j <   this.props.columns[i].gitems.length; j++) {
+          let date = moment();
+          var gitemdate = moment(this.props.columns[i].gitems[j].expire_date);
+          if (date.diff(gitemdate, 'days') < 7){
+            this.props.columns[i].gitems[j];
+            //insert api call w/ items here
+          }
+        }
       }
     }
   }
