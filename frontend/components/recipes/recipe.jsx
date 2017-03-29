@@ -27,6 +27,7 @@ class Recipe extends Component{
           if (date.diff(gitemdate, 'days') < 7){
             this.props.columns[i].gitems[j];
             //insert api call w/ items here
+            //look into api for food
           }
         }
       }
