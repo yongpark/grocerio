@@ -25,7 +25,7 @@ class Recipe extends Component{
           let date = moment();
           var gitemdate = moment(this.props.columns[i].gitems[j].expire_date);
           if (date.diff(gitemdate, 'days') < 7){
-            this.props.columns[i].gitems[j];
+            this.props.columns[i].gitems[j].title;
             //insert api call w/ items here
             //look into api for food
           }
