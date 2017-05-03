@@ -3,13 +3,17 @@ export const fetchRecipes = listId => (
     type: 'GET',
     url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search`,
     data: {
-
+      fillingredients: 'true',
+      ingredients: '',
+      limitlicense: 'false',
+      number: '3',
+      ranking: '2'
     },
     dataType: 'json',
     success: function(data) { console.log((data.source)); },
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "YOUR-MASHAPE-KEY"); // Enter here your Mashape key
+    xhr.setRequestHeader("X-Mashape-Authorization", "YOUR-MASHAPE-KEY");
     }
   })
 );
