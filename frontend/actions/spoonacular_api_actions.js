@@ -7,8 +7,8 @@ const receiveRecipes = recipes => ({
   recipes
 });
 
-export const fetchRecipes = () => dispatch => (
-  SpoonacularAPIUtil.fetchRecipes().then(recipes =>
+export const fetchRecipes = ingredients => dispatch => (
+  SpoonacularAPIUtil.fetchRecipes(ingredients).then(recipes =>
     dispatch(receiveRecipes(recipes))
   )
 );

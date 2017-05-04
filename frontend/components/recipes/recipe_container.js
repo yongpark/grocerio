@@ -3,7 +3,7 @@ import Recipe from './recipe';
 import {fetchList} from '../../actions/list_actions';
 import {selectList, selectColumns} from '../../reducers/selector';
 import {fetchColumns} from '../../actions/column_actions';
-
+import {fetchRecipes} from '../../actions/spoonacular_api_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   list: selectList(state, ownProps.listId),
@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchList: id => dispatch(fetchList(id)),
-  fetchColumns: listId => dispatch(fetchColumns(listId))
+  fetchColumns: listId => dispatch(fetchColumns(listId)),
+  fetchRecipes: ingredients => dispatch(fetchRecipes(ingredients))
 });
 
 export default connect(
