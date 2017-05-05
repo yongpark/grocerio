@@ -41,7 +41,7 @@ class Recipe extends Component{
   }
 
   fetchRecipes(){
-    this.props.fetchRecipes(this.state.ingredients.toString()).then((result) => this.setState({recipes: result.recipes})).then(() => console.log(this.state));
+    this.props.fetchRecipeIDs(this.state.ingredients.toString()).then((result) => this.setState({recipeIDs: result.recipeIDs})).then(() => console.log(this.state));
   }
 
 
