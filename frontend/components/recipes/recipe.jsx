@@ -6,7 +6,7 @@ import {Card, CardTitle} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import moment from 'moment';
-import {fetchRecipes} from '../../actions/spoonacular_api_actions';
+import {fetchRecipesIDs, fetchRecipes} from '../../actions/spoonacular_api_actions';
 
 class Recipe extends Component{
   constructor(props){
@@ -42,6 +42,8 @@ class Recipe extends Component{
 
   fetchRecipes(){
     this.props.fetchRecipeIDs(this.state.ingredients.toString()).then((result) => this.setState({recipeIDs: result.recipeIDs})).then(() => this.props.fetchRecipes(this.state.recipeIDs.toString())).then((result) => this.setState({recipes: result.recipes}));
+    console.log(this.state.recipes);
+    //format into card
   }
 
 

@@ -13,14 +13,14 @@ const receiveRecipeIDs = recipeIDs => ({
   recipeIDs
 });
 
-export const fetchRecipes = ingredients => dispatch => (
-  SpoonacularAPIUtil.fetchRecipes(ingredients).then(recipes =>
+export const fetchRecipes = ids => dispatch => (
+  SpoonacularAPIUtil.fetchRecipes(ids).then(recipes =>
     dispatch(receiveRecipes(recipes))
   )
 );
 
 export const fetchRecipeIDs = ingredients => dispatch => (
-  SpoonacularAPIUtil.fetchRecipeIDs(ingredients).then(recipes =>
-    dispatch(receiveRecipeIDs(recipes))
+  SpoonacularAPIUtil.fetchRecipeIDs(ingredients).then(ids =>
+    dispatch(receiveRecipeIDs(ids))
   )
 );
