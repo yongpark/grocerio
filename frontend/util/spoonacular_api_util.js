@@ -23,7 +23,7 @@ export const fetchRecipeIDs = ingredients => (
 export const fetchRecipes = id => (
   $.ajax({
     type: 'GET',
-    url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/{id}/information`,
+    url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`,
     data: {
       id: `${id}`,
       includeNutrition: false
