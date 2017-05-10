@@ -20,7 +20,7 @@ export const fetchRecipes = ids => dispatch => (
 );
 
 export const fetchRecipeIDs = ingredients => dispatch => (
-  SpoonacularAPIUtil.fetchRecipeIDs(ingredients).then(ids =>
-    dispatch(receiveRecipeIDs(ids))
+  SpoonacularAPIUtil.fetchRecipeIDs(ingredients).then(recipe =>
+    dispatch(receiveRecipeIDs(recipe))
   )
 );

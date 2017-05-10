@@ -6,7 +6,7 @@ const RecipeReducer = (state = {}, action) => {
   switch(action.type){
     case RecipeActions.RECEIVE_RECIPES:
       return action.recipes;
-    case RecipeActions.RECEIVE_RECIPES_IDs:
+    case RecipeActions.RECEIVE_RECIPE_IDS:
       return action.recipeIDs;
     default:
       return state;
