@@ -13,8 +13,7 @@ class Recipe extends Component{
     super(props);
     this.state = {
       ingredients: '',
-      recipeIDs: [],
-      recipes: []
+      recipeIDs: []
     };
     this.nearExpiration = this.nearExpiration.bind(this);
     this.getIDs = this.getIDs.bind(this);
@@ -24,8 +23,9 @@ class Recipe extends Component{
     this.props.fetchList(this.props.listId)
     .then(() => this.props.fetchColumns(this.props.listId)).then(() => this.nearExpiration()).then(() => this.props.fetchRecipeIDs(this.state.ingredients.toString()).then((result) =>
     this.setState({recipeIDs: result.recipeIDs}))).then(() => this.getIDs()).then(() =>
-    this.props.fetchRecipes(this.state.recipeIDs.toString())).then((result) => this.setState({recipes: result.recipes})).then(() =>  console.log(this.state));
-    //add for loop for recipeIDs string
+    this.props.fetchRecipes(this.state.recipeIDs[0].toString())).then((result) => this.setState({recipe1Name: result.recipes.title, recipe1Instructions: result.recipes.instructions})).then(() =>
+    this.props.fetchRecipes(this.state.recipeIDs[1].toString())).then((result) => this.setState({recipe2Name: result.recipes.title, recipe2Instructions: result.recipes.instructions})).then(() =>
+    this.props.fetchRecipes(this.state.recipeIDs[2].toString())).then((result) => this.setState({recipe3Name: result.recipes.title, recipe3Instructions: result.recipes.instructions})).then(() => console.log(this.state));
   }
 
   nearExpiration(){
