@@ -60,6 +60,8 @@ class Recipe extends Component{
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
             <CardTitle title="Recommended Recipes"/>
+              <div className='recipes' value={this.state.recipe1}>
+              </div>
           </Card>
         </MuiThemeProvider>
       </div>
