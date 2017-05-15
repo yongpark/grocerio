@@ -35,8 +35,10 @@ class List extends Component{
                 <ColumnIndexContainer listId={listId}/>
             </div>
         </div>
-        <ListMenuContainer listId={listId}/>
-        <RecipeContainer listId={listId}/>
+        <ul>
+          <ListMenuContainer listId={listId}/>
+          <RecipeContainer listId={listId}/>
+        </ul>
       </div>
     );
   }

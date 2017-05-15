@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import Paper from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {Card, CardTitle} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import moment from 'moment';
@@ -19,7 +19,7 @@ class Recipe extends Component{
     this.getIDs = this.getIDs.bind(this);
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.fetchList(this.props.listId)
     .then(() => this.props.fetchColumns(this.props.listId)).then(() => this.nearExpiration()).then(() => this.props.fetchRecipeIDs(this.state.ingredients.toString()).then((result) =>
     this.setState({recipeIDs: result.recipeIDs}))).then(() => this.getIDs()).then(() =>
@@ -56,15 +56,32 @@ class Recipe extends Component{
 
   render(){
     return(
-      <div>
+      <ul>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardTitle title="Recommended Recipes"/>
-              <div className='recipes' value={this.state.recipe1}>
-              </div>
+            <CardTitle title="Recipe #1" subtitle={this.state.recipe1Name}/>
+            <CardText>
+              {this.state.recipe1Instructions}
+            </CardText>
           </Card>
         </MuiThemeProvider>
-      </div>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <Card className='recipe'>
+            <CardTitle title="Recipe #2" subtitle={this.state.recipe2Name}/>
+            <CardText>
+              {this.state.recipe2Instructions}
+            </CardText>
+          </Card>
+        </MuiThemeProvider>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+          <Card className='recipe'>
+            <CardTitle title="Recipe #3" subtitle={this.state.recipe3Name}/>
+            <CardText>
+              {this.state.recipe3Instructions}
+            </CardText>
+          </Card>
+        </MuiThemeProvider>
+      </ul>
     );
   }
 }
