@@ -49,6 +49,9 @@ class Recipe extends Component{
     for (var i = 0; i < this.state.recipeIDs.length; i++) {
       ids.push(this.state.recipeIDs[i].id);
     }
+    this.setState({recipe1IMG: this.state.recipeIDs[0].image});
+    this.setState({recipe2IMG: this.state.recipeIDs[1].image});
+    this.setState({recipe3IMG: this.state.recipeIDs[2].image});
     this.setState({recipeIDs: ids});
   }
 
@@ -59,6 +62,9 @@ class Recipe extends Component{
       <ul>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
+            <CardMedia>
+              <img src={this.state.recipe1IMG}/>
+            </CardMedia>
             <CardTitle title="Recipe #1" subtitle={this.state.recipe1Name}/>
             <CardText>
               {this.state.recipe1Instructions}
@@ -67,6 +73,9 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
+            <CardMedia>
+              <img src={this.state.recipe2IMG}/>
+            </CardMedia>
             <CardTitle title="Recipe #2" subtitle={this.state.recipe2Name}/>
             <CardText>
               {this.state.recipe2Instructions}
@@ -75,6 +84,9 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
+            <CardMedia>
+              <img src={this.state.recipe3IMG}/>
+            </CardMedia>
             <CardTitle title="Recipe #3" subtitle={this.state.recipe3Name}/>
             <CardText>
               {this.state.recipe3Instructions}
