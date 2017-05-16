@@ -50,6 +50,9 @@ class GItemIndexItem extends React.Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.activate = this.activate.bind(this);
     this.expired = this.expired.bind(this);
+    this.editDate = this.editDate.bind(this);
+    this.handleDatepicker2OnShow = this.handleDatepicker2OnShow.bind(this);
+    this.handleDatepicker2OnClose = this.handleDatepicker2OnClose.bind(this);
   }
 
   activate(active){
@@ -74,6 +77,9 @@ class GItemIndexItem extends React.Component {
   }
 
   handleClickOutside(e){
+    if (this.datepicker2Open){
+      return;
+    }
     const domNode = ReactDOM.findDOMNode(this);
     if (!domNode || !domNode.contains(event.target)) {
       this.hide();
@@ -118,6 +124,22 @@ class GItemIndexItem extends React.Component {
     this.props.updateGItem(this.state.gitem).then(this.hide());
   }
 
+  handleDatepicker2OnShow(e){
+    this.datepicker2Open = true;
+  }
+
+  handleDatepicker2OnClose(e){
+    this.datepicker2Open = false;
+  }
+
+  editDate(e, date){
+    let formattedDate = moment(date).format("YYYY-MM-DD");
+    console.log(formattedDate);
+    const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
+    this.setState({gitem});
+   //  debugger;
+  }
+
   render(){
 
     const {gitem, disabled, connectDragSource, isDragging} = this.props;
@@ -153,6 +175,11 @@ class GItemIndexItem extends React.Component {
                   hintStyle={{color: grey50}}
                   underlineStyle={{width: '200px', color:grey50}}
                 />
+              <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepicker2OnShow}
+                onChange={this.editDate}
+                onDismiss={this.handleDatepicker2OnClose}
+                defaultDate={this.state.gitem.expire_date}
+                container="inline" mode="landscape"/>
               <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
               </Card>
             </MuiThemeProvider>
