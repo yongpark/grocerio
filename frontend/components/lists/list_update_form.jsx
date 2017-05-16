@@ -72,27 +72,29 @@ class ListUpdateForm extends React.Component{
     return(
       <div className="list-update-form">
         <h2 className="list-container-heading" onClick={this.show}>{this.props.list.title}</h2>
-        <h2 className='drag-drop-hint'>Drag and Drop Grocery Items</h2>
-        <div className="list-update-container" ref='update'>
-          <form onSubmit={this.handleSubmit}>
-            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-              <Card style={{backgroundColor: lightBlue300}}>
-                <CardTitle title="Rename List" subtitle="List Name"  titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
-                  <TextField
-                    id="titleinput"
-                    type="text"
-                    value={this.state.list.title}
-                    inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, }}
-                    floatingLabelStyle={{color: grey50, left: '10px'}}
-                    floatingLabelFocusStyle={{color: grey50}}
-                    floatingLabelText="i.e. Weekly Grocery List"
-                    onChange={this.update('title')}
-                  />
-                <RaisedButton type="submit" secondary={true} label="Update" labelStyle={{fontWeight: 400}}/>
-              </Card>
-            </MuiThemeProvider>
-          </form>
-        </div>
+        <ul className='dragdropupdate'>
+          <h2 className='drag-drop-hint'>Drag and Drop Grocery Items</h2>
+          <div className="list-update-container" ref='update'>
+            <form onSubmit={this.handleSubmit}>
+              <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+                <Card style={{backgroundColor: lightBlue300}}>
+                  <CardTitle title="Rename List" subtitle="List Name"  titleStyle={{color: grey50, fontSize: 18}} subtitleStyle={{color: grey50}}/>
+                    <TextField
+                      id="titleinput"
+                      type="text"
+                      value={this.state.list.title}
+                      inputStyle={{paddingLeft: 5, paddingRight: 5, color: grey50, }}
+                      floatingLabelStyle={{color: grey50, left: '10px'}}
+                      floatingLabelFocusStyle={{color: grey50}}
+                      floatingLabelText="i.e. Weekly Grocery List"
+                      onChange={this.update('title')}
+                    />
+                  <RaisedButton type="submit" secondary={true} label="Update" labelStyle={{fontWeight: 400}}/>
+                </Card>
+              </MuiThemeProvider>
+            </form>
+          </div>
+        </ul>
       </div>
     );
   }

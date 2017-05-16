@@ -63,7 +63,7 @@ class Recipe extends Component{
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
             <CardMedia>
-              <img src={this.state.recipe1IMG}/>
+              <img className='recipeIMG' src={this.state.recipe1IMG}/>
             </CardMedia>
             <CardTitle title="Recipe #1" subtitle={this.state.recipe1Name}/>
             <CardText>
@@ -74,7 +74,7 @@ class Recipe extends Component{
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
             <CardMedia>
-              <img src={this.state.recipe2IMG}/>
+              <img className='recipeIMG' src={this.state.recipe2IMG}/>
             </CardMedia>
             <CardTitle title="Recipe #2" subtitle={this.state.recipe2Name}/>
             <CardText>
@@ -85,7 +85,7 @@ class Recipe extends Component{
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
             <CardMedia>
-              <img src={this.state.recipe3IMG}/>
+              <img className='recipeIMG' src={this.state.recipe3IMG}/>
             </CardMedia>
             <CardTitle title="Recipe #3" subtitle={this.state.recipe3Name}/>
             <CardText>
