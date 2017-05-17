@@ -45,7 +45,6 @@ class GItemCreateForm extends React.Component {
 
    copyState(){
      const initialState = this.state;
-     console.log("works");
    }
 
    reset() {

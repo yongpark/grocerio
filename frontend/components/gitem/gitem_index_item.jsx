@@ -53,6 +53,7 @@ class GItemIndexItem extends React.Component {
     this.editDate = this.editDate.bind(this);
     this.handleDatepicker2OnShow = this.handleDatepicker2OnShow.bind(this);
     this.handleDatepicker2OnClose = this.handleDatepicker2OnClose.bind(this);
+    this.formatDateString = this.formatDateString.bind(this);
   }
 
   activate(active){
@@ -140,6 +141,15 @@ class GItemIndexItem extends React.Component {
    //  debugger;
   }
 
+  formatDateString(date){
+    console.log(date);
+    let parsedDate = Date.parse(date);
+    let newDate = new Date(parsedDate);
+    newDate.setHours(0, 0, 0, 0);
+    console.log(newDate);
+    return newDate;
+  }
+
   render(){
 
     const {gitem, disabled, connectDragSource, isDragging} = this.props;
@@ -178,7 +188,7 @@ class GItemIndexItem extends React.Component {
               <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepicker2OnShow}
                 onChange={this.editDate}
                 onDismiss={this.handleDatepicker2OnClose}
-                defaultDate={this.state.gitem.expire_date}
+                defaultDate={this.formatDateString(this.state.gitem.expire_date)}
                 container="inline" mode="landscape"/>
               <RaisedButton type="submit" secondary={true} label="update" labelStyle={{fontWeight: 400}}/>
               </Card>
