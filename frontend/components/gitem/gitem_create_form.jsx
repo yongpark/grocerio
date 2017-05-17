@@ -20,7 +20,7 @@ class GItemCreateForm extends React.Component {
       show: false,
       gitem: props.gitem
     };
-    this.copyState = this.copyState.bind(this);
+    //this.copyState = this.copyState.bind(this);
     this.show = this.show.bind(this);
     this.hide = this.hide.bind(this);
     this.update = this.update.bind(this);
@@ -30,12 +30,13 @@ class GItemCreateForm extends React.Component {
     this.handleDatepickerOnShow = this.handleDatepickerOnShow.bind(this);
     this.handleDatepickerOnClose = this.handleDatepickerOnClose.bind(this);
     this.reset = this.reset.bind(this);
+    this.initialState = this.state.gitem;
   }
 
    componentDidMount() {
      document.addEventListener('click',
        this.handleClickOutside, true);
-     this.copyState();
+     //this.copyState();
    }
 
    componentWillUnmount() {
@@ -43,12 +44,12 @@ class GItemCreateForm extends React.Component {
      this.handleClickOutside, true);
    }
 
-   copyState(){
-     const initialState = this.state;
-   }
+  //  copyState(){
+  //    const initialState = this.state;
+  //  }
 
    reset() {
-        this.setState(initialState);
+      this.setState({gitem: this.initialState});
     }
 
    handleClickOutside(event) {
@@ -109,7 +110,7 @@ class GItemCreateForm extends React.Component {
      console.log();
      e.preventDefault();
      if(this.state.gitem){
-       this.props.createGItem(this.state.gitem).then(this.hide).then();
+       this.props.createGItem(this.state.gitem).then(this.setState({gitem: this.initialState})).then(this.hide).then(console.log(this.state.gitem));
      }
    }
 
