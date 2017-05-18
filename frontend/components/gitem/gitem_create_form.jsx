@@ -97,20 +97,17 @@ class GItemCreateForm extends React.Component {
     };
   }
 
-   updateDate(e, date){
-     console.log(date);
-     let formattedDate = moment(date).format("YYYY-MM-DD");
-     console.log(formattedDate);
-     const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
-     this.setState({gitem});
-    //  debugger;
-   }
+    updateDate(e, date){
+      let formattedDate = moment(date).format("YYYY-MM-DD");
+      const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
+      this.setState({gitem});
+     //  debugger;
+    }
 
    handleSubmit(e){
-     console.log();
      e.preventDefault();
      if(this.state.gitem){
-       this.props.createGItem(this.state.gitem).then(this.setState({gitem: this.initialState})).then(this.hide).then(console.log(this.state.gitem));
+       this.props.createGItem(this.state.gitem).then(this.setState({gitem: this.initialState})).then(this.hide);
      }
    }
 

@@ -25,7 +25,7 @@ class Recipe extends Component{
     this.setState({recipeIDs: result.recipeIDs}))).then(() => this.getIDs()).then(() =>
     this.props.fetchRecipes(this.state.recipeIDs[0].toString())).then((result) => this.setState({recipe1Name: result.recipes.title, recipe1Instructions: result.recipes.instructions})).then(() =>
     this.props.fetchRecipes(this.state.recipeIDs[1].toString())).then((result) => this.setState({recipe2Name: result.recipes.title, recipe2Instructions: result.recipes.instructions})).then(() =>
-    this.props.fetchRecipes(this.state.recipeIDs[2].toString())).then((result) => this.setState({recipe3Name: result.recipes.title, recipe3Instructions: result.recipes.instructions})).then(() => console.log(this.state));
+    this.props.fetchRecipes(this.state.recipeIDs[2].toString())).then((result) => this.setState({recipe3Name: result.recipes.title, recipe3Instructions: result.recipes.instructions}));
   }
 
   nearExpiration(){
