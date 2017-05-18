@@ -89,7 +89,6 @@ class GItemCreateForm extends React.Component {
 
   update(prop){
     return e => {
-      console.log(e);
       const gitem = merge({}, this.state.gitem, {
         [prop]: e.target.value
       });
@@ -107,7 +106,7 @@ class GItemCreateForm extends React.Component {
    handleSubmit(e){
      e.preventDefault();
      if(this.state.gitem){
-       this.props.createGItem(this.state.gitem).then(this.setState({gitem: this.initialState})).then(this.hide);
+       this.props.createGItem(this.state.gitem).then(this.setState({gitem: this.initialState})).then(this.reset).then(this.hide);
      }
    }
 
@@ -140,9 +139,11 @@ class GItemCreateForm extends React.Component {
                    type="text"
                    placeholder="Add a Grocery Item"
                    onChange={this.update('title')}
+                   value={this.state.gitem.title}
                  />
                <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepickerOnShow}
                onChange={this.updateDate}
+               value={this.state.gitem.expire_date}
                onDismiss={this.handleDatepickerOnClose}
                container="inline" mode="landscape"/>
              <RaisedButton type="submit" secondary={true} label="Save"/>

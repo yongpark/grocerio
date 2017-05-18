@@ -142,12 +142,15 @@ class GItemIndexItem extends React.Component {
   }
 
   formatDateString(date){
-    console.log(date);
-    let parsedDate = Date.parse(date);
-    let newDate = new Date(parsedDate);
-    newDate.setHours(0, 0, 0, 0);
-    console.log(newDate);
-    return newDate;
+    if (date === null) {
+      return null;
+    } else {
+      let parsedDate = Date.parse(date);
+      let newDate = new Date(parsedDate);
+      newDate.setHours(0, 0, 0, 0);
+      console.log(newDate);
+      return newDate;
+    }
   }
 
   render(){
@@ -185,7 +188,7 @@ class GItemIndexItem extends React.Component {
                   hintStyle={{color: grey50}}
                   underlineStyle={{width: '200px', color:grey50}}
                 />
-              <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepicker2OnShow}
+              <DatePicker className="grocery-item-datepicker2" onTouchTap={this.handleDatepicker2OnShow}
                 onChange={this.editDate}
                 onDismiss={this.handleDatepicker2OnClose}
                 defaultDate={this.formatDateString(this.state.gitem.expire_date)}

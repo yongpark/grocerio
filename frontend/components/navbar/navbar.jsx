@@ -6,11 +6,12 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import { hashHistory, Link } from 'react-router';
 import SessionButtonContainer from './session_form/session_button_container';
 import SessionFormContainer from './session_form/session_form_container';
+import IconButton from 'material-ui/IconButton';
 
 const navbarStyle = {
   title: {
    cursor: 'pointer',
-   fontWeight: 300 
+   fontWeight: 300
  },
 };
 
@@ -28,12 +29,15 @@ class NavBar extends React.Component{
   handleClick(url){
     hashHistory.push(url);
   }
-
+//add github icon to left side of navbar
   render(){
     const handleClick = url => () => hashHistory.push(url);
     return(
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-        <AppBar onTitleTouchTap={handleTouchTap} className="navbar" title={<span style={navbarStyle.title} >Grocero</span>} >
+        <AppBar onTitleTouchTap={handleTouchTap} className="navbar" title='Grocero'
+          style={navbarStyle.title}
+          iconElementLeft={<IconButton iconClassName="muidocs-icon-custom-github"/>}
+          >
           <SessionButtonContainer/>
           <SessionFormContainer/>
         </AppBar>
