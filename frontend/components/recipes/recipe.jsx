@@ -62,10 +62,9 @@ class Recipe extends Component{
       <ul>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia>
+            <CardMedia overlay={<CardTitle title='Recipe #1' subtitle={this.state.recipe1Name}/>}>
               <img className='recipeIMG' src={this.state.recipe1IMG}/>
             </CardMedia>
-            <CardTitle title="Recipe #1" subtitle={this.state.recipe1Name}/>
             <CardText>
               {this.state.recipe1Instructions}
             </CardText>
@@ -73,10 +72,9 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia>
+            <CardMedia overlay={<CardTitle title='Recipe #2' subtitle={this.state.recipe2Name}/>}>
               <img className='recipeIMG' src={this.state.recipe2IMG}/>
             </CardMedia>
-            <CardTitle title="Recipe #2" subtitle={this.state.recipe2Name}/>
             <CardText>
               {this.state.recipe2Instructions}
             </CardText>
@@ -84,10 +82,9 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia>
+            <CardMedia overlay={<CardTitle title='Recipe #3' subtitle={this.state.recipe3Name}/>}>
               <img className='recipeIMG' src={this.state.recipe3IMG}/>
             </CardMedia>
-            <CardTitle title="Recipe #3" subtitle={this.state.recipe3Name}/>
             <CardText>
               {this.state.recipe3Instructions}
             </CardText>

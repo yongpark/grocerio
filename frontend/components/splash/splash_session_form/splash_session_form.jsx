@@ -18,6 +18,7 @@ class SplashSessionForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleToggleFormType = this.handleToggleFormType.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
+    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {

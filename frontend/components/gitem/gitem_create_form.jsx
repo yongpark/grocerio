@@ -12,7 +12,6 @@ import {grey50} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
 import moment from 'moment';
 
-
 class GItemCreateForm extends React.Component {
   constructor(props){
     super(props);
