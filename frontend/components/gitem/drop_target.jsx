@@ -43,6 +43,7 @@ const GItemTarget = ({connectDropTarget, children}) => {
   return connectDropTarget(
     <li className="drop-target">
       {children}
+      Drop Grocery Card Here
     </li>
   );
 };
