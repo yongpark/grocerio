@@ -36,7 +36,7 @@ class NavBar extends React.Component{
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <AppBar onTitleTouchTap={handleTouchTap} className="navbar" title='Grocero'
           style={navbarStyle.title}
-          iconElementLeft={<IconButton iconClassName="muidocs-icon-custom-github"/>}
+          iconElementLeft={<img href="../../../assets/images/aubergine.png"/>}
           >
           <SessionButtonContainer/>
           <SessionFormContainer/>

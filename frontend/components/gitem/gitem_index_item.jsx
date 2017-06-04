@@ -135,7 +135,6 @@ class GItemIndexItem extends React.Component {
 
   editDate(e, date){
     let formattedDate = moment(date).format("YYYY-MM-DD");
-    console.log(formattedDate);
     const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
     this.setState({gitem});
    //  debugger;
@@ -148,7 +147,6 @@ class GItemIndexItem extends React.Component {
       let parsedDate = Date.parse(date);
       let newDate = new Date(parsedDate);
       newDate.setHours(0, 0, 0, 0);
-      console.log(newDate);
       return newDate;
     }
   }

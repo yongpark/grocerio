@@ -54,7 +54,6 @@ class GItemCreateForm extends React.Component {
     }
 
    handleClickOutside(event) {
-     console.log(this.datepickerOpen);
      if (this.datepickerOpen) {
        return;
      }
@@ -123,7 +122,6 @@ class GItemCreateForm extends React.Component {
      let parsedDate = Date.parse(date);
      let newDate = new Date(parsedDate);
      newDate.setHours(0, 0, 0, 0);
-     console.log(newDate);
    }
 
    clearDate (event) {
