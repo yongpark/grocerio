@@ -4,6 +4,7 @@
   position: relative;
   list-style: none;
   left: -40px;
+
 }
 
 .gitem-index-item{
@@ -12,7 +13,7 @@
   font-weight: 300 !important;
   font-family: 'Roboto', 'san-serif' !important;
   width: 200px !important;
-  margin-left: 5px !important;;
+  margin-left: 5px !important;
 }
 
 .gitem-create{
@@ -21,17 +22,18 @@
   font-weight: 300 !important;
   font-family: 'Roboto', 'san-serif' !important;
   width: 200px !important;
-  height: 50px !important;
   margin-left: 5px !important;
-  margin-bottom: 50px;
 }
 
 .drop-target{
+  border-top: #FAFAFA solid 1px;
+  border-bottom: #FAFAFA solid 1px;
   color: #FAFAFA;
   padding-top: 26px;
   text-align: center;
   width: 210px;
-  height: 50px;
+  height: 47px;
+  margin-bottom: 5px;
 }
 
 .gitem-edit-form{
