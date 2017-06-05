@@ -6,6 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
 import {lightBlue300} from 'material-ui/styles/colors';
 import {grey300} from 'material-ui/styles/colors';
+import Typist from 'react-typist';
 
 class SplashSessionForm extends React.Component{
   constructor(props){
