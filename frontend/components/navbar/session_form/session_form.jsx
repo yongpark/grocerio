@@ -7,6 +7,8 @@ import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import {lightBlue300} from 'material-ui/styles/colors';
 import {grey300} from 'material-ui/styles/colors';
+import Typist from 'react-typist';
+import merge from 'lodash/merge';
 injectTapEventPlugin();
 
 class SessionForm extends React.Component{
@@ -42,8 +44,8 @@ class SessionForm extends React.Component{
       username: 'guest',
       password: 'password'
     };
-    this.props.login({user});
-    this.props.closeAuthModal('login');
+    const state = merge({}, this.state, user);
+    this.setState({state});
   }
 
   update(field){
@@ -64,18 +66,31 @@ class SessionForm extends React.Component{
       linkText = "Log In";
       guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin} labelStyle={{fontWeight: 400}}/>);
     }
+
+    const emptyState = this.state.username === "";
+    console.log(emptyState);
+    let password = null;
+    let username = null;
+    if (emptyState){
+      password = this.state.password;
+      username = this.state.username;
+    } else{
+      password = <Typist>this.state.password</Typist>;
+      username = <Typist>this.state.username</Typist>;
+    }
+
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={buttonName} bodyStyle={{color: lightBlue300}} className="form" titleStyle={{fontWeight: 300, color: lightBlue300}}>
             <form onSubmit={this.handleSubmit}>
-              <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : `username ${this.props.errors.username.join(", ")}`} value={this.state.username}  onChange={this.update("username")} fullWidth={true}
+              <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : `username ${this.props.errors.username.join(", ")}`} value={username}  onChange={this.update("username")} fullWidth={true}
                 inputStyle={{color: lightBlue300, }}
                 floatingLabelStyle={{color: lightBlue300}}
                 floatingLabelFocusStyle={{color: lightBlue300}}
                 hintStyle={{color: grey300}}/>
               <br/>
-              <TextField type="password" hintText="Password" floatingLabelText="Password" value={this.state.password} onChange={this.update("password")} fullWidth={true} errorText={this.props.errors.password === undefined ? "" : this.props.errors.password.join(", ")}
+              <TextField type="password" hintText="Password" floatingLabelText="Password" value={password} onChange={this.update("password")} fullWidth={true} errorText={this.props.errors.password === undefined ? "" : this.props.errors.password.join(", ")}
                 inputStyle={{color: lightBlue300, }}
                 floatingLabelStyle={{color: lightBlue300}}
                 floatingLabelFocusStyle={{color: lightBlue300}}
@@ -90,7 +105,7 @@ class SessionForm extends React.Component{
           </Dialog>
         </MuiThemeProvider>
       </section>
-    )
+    );
   }
 }
 
