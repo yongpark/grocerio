@@ -7,7 +7,7 @@ import {hashHistory} from 'react-router';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.session.errors,
-  authModalOpen: state.modals.signup,
+  authModalOpen: state.modals.signup || state.modals.auth,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
