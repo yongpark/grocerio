@@ -45,6 +45,7 @@ class SessionButton extends React.Component{
         <div>
           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <RaisedButton className='session-button' label="login" labelStyle={labelstyle}
+            backgroundColor="#78909C"
             style={style} onClick={this.props.openAuthModal}>
             </RaisedButton>
           </MuiThemeProvider>
