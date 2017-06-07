@@ -12,6 +12,11 @@ import {grey50} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
 import moment from 'moment';
 
+const labelstyle={
+  fontWeight: 300,
+  color: grey50
+};
+
 class GItemCreateForm extends React.Component {
   constructor(props){
     super(props);
@@ -165,7 +170,7 @@ class GItemCreateForm extends React.Component {
                value={this.state.gitem.expire_date ? new Date(this.state.gitem.expire_date) : null}
                onDismiss={this.handleDatepickerOnClose}
                container="inline" mode="landscape"/>
-             <RaisedButton ref="button" type="submit" secondary={true} label="Save"/>
+             <RaisedButton ref="button" type="submit" label="Save" labelStyle={labelstyle} backgroundColor="#78909C"/>
            </Card>
            </MuiThemeProvider>
          </form>
