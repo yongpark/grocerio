@@ -5,7 +5,8 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {lightBlue300} from 'material-ui/styles/colors';
-import {grey300} from 'material-ui/styles/colors';
+import {grey50} from 'material-ui/styles/colors';
+import {blueGrey300} from 'material-ui/styles/colors';
 
 const style={
   height: '64px',
@@ -14,8 +15,8 @@ const style={
 const labelstyle={
   paddingTop: '10%',
   top: '20px',
-  fontWeight: 400,
-  color: lightBlue300
+  fontWeight: 300,
+  color: grey50
 };
 
 class SessionButton extends React.Component{
@@ -33,6 +34,7 @@ class SessionButton extends React.Component{
               label="logout"
               labelStyle={labelstyle}
               style={style}
+              backgroundColor="#78909C"
               onClick={this.props.logout}/>
           </MuiThemeProvider>
         </div>
