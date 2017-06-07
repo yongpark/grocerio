@@ -7,16 +7,23 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import {lightBlue300} from 'material-ui/styles/colors';
+import {blueGrey300} from 'material-ui/styles/colors';
 import {grey50} from 'material-ui/styles/colors';
+
+const labelstyle={
+  fontWeight: 300,
+  color: grey50
+};
+
 
 const ListMenu = ({listId, deleteList, router}) => {
   return(
   <div className="list-menu">
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-      <Card style={{backgroundColor: lightBlue300}}>
-        <CardTitle title="List Menu" titleStyle={{color: grey50, fontSize: 18}}/>
-        <RaisedButton className="list-menu-button" onClick={() => deleteList(listId)
-          .then(router.push('/lists'))} label="Delete List" secondary={true}/>
+      <Card className="menu-card">
+        <CardTitle title="List Menu" titleStyle={{color: blueGrey300, fontSize: 18}}/>
+        <RaisedButton className='list-menu-button' backgroundColor="#78909C" labelStyle={labelstyle} onClick={() => deleteList(listId)
+          .then(router.push('/lists'))} label="Delete List" />
       </Card>
     </MuiThemeProvider>
   </div>

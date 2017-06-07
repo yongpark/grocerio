@@ -9,9 +9,17 @@
   font-weight: 300 !important;
 }
 
+.menu-card{
+  background-color: #FAFAFA !important;
+  font-weight: 300 !important;
+  text-decoration: none;
+}
+
 .list-menu-button{
+  background-color: #78909C !important;
   font-family: 'Roboto', 'san-serif';
   font-weight: 300 !important;
+  color: #FAFAFA !important;
 }
 
 .list-container{
@@ -19,7 +27,7 @@
   justify-content: space-between;
   height: calc(100vh - 65px);
   overflow: auto;
-  background-color: #81C784;
+  background-color: #E1E2E1;
 }
 
 .list-container-header{
@@ -33,18 +41,18 @@
 
   .list-container-heading{
     font-family: 'Roboto', 'san-serif';
+    color: #4B636E;
     font-weight: 300;
-    color: #FAFAFA;
     display: inline-block;
   }
 
-  .list-container-heading:hover{
-    background-color: #29B6F6;
-  }
+  // .list-container-heading:hover{
+  //   background-color: #29B6F6;
+  // }
 
 .drag-drop-hint{
   position: absolute;
-  color: #FAFAFA;
+  color: #4B636E;
   font-family: 'Roboto', 'san-serif';
   font-weight: 300;
   font-size: 16px;
