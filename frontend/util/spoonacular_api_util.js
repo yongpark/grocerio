@@ -15,7 +15,7 @@ export const fetchRecipeIDs = ingredients => (
     },
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "OOjlmhc2mGmshoQHtCWTnKaEZx4pp1tO9Rnjsnct4kvZJAoBhn");
+    xhr.setRequestHeader(process.env.mashape);
     }
   })
 );
@@ -34,7 +34,7 @@ export const fetchRecipes = id => (
     },
     error: function(err) { alert(err); },
     beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "OOjlmhc2mGmshoQHtCWTnKaEZx4pp1tO9Rnjsnct4kvZJAoBhn");
+    xhr.setRequestHeader(process.env.mashape);
     }
   })
 );
