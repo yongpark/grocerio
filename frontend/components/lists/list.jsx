@@ -25,7 +25,6 @@ class List extends Component{
 
 
   render(){
-    console.log(process.env.mapshape);
     const listId = this.props.params.listId;
     return (
       <div className="list-container">

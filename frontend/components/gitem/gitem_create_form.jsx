@@ -104,14 +104,14 @@ class GItemCreateForm extends React.Component {
     updateDate(e, date){
       let formattedDate = moment(date).format("YYYY-MM-DD");
       const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
-      this.setState({gitem}).then(() => this.handleDatepickerOnClose());
+      this.setState({gitem});
      //  debugger;
     }
 
    handleSubmit(e){
      e.preventDefault();
      if(this.state.gitem){
-       this.props.createGItem(this.state.gitem).then(this.setState({gitem:this.initialState})).then(this.reset).then(this.clearDate).then(this.hide);
+       this.props.createGItem(this.state.gitem).then(this.setState({gitem:this.initialState})).then(this.reset).then(this.clearDate).then(this.hide());
      }
    }
 
@@ -130,8 +130,6 @@ class GItemCreateForm extends React.Component {
    }
 
    clearDate (event) {
-       event.preventDefault();
-
        // We manually reach into the composed component and set it's date to null.
        let newDate = null;
        this.refs.datePicker.setState({
@@ -164,7 +162,8 @@ class GItemCreateForm extends React.Component {
                    onChange={this.update('title')}
                    value={this.state.gitem.title}
                  />
-               <DatePicker className="grocery-item-datepicker" onTouchTap={this.handleDatepickerOnShow}
+               <DatePicker className="grocery-item-datepicker"
+               onTouchTap={this.handleDatepickerOnShow}
                onChange={this.updateDate}
                ref="datePicker"
                value={this.state.gitem.expire_date ? new Date(this.state.gitem.expire_date) : null}
