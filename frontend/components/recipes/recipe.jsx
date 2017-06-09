@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import moment from 'moment';
 import {fetchRecipesIDs, fetchRecipes} from '../../actions/spoonacular_api_actions';
+import {grey50,lightBlue600} from 'material-ui/styles/colors';
 
 class Recipe extends Component{
   constructor(props){
@@ -62,7 +63,7 @@ class Recipe extends Component{
       <ul>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlay={<CardTitle className='overlay' title='Recipe #1' subtitle={this.state.recipe1Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #1' subtitle={this.state.recipe1Name}/>}>
               <img className='recipeIMG' src={this.state.recipe1IMG}/>
             </CardMedia>
             <CardText>
@@ -72,7 +73,7 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlay={<CardTitle className='overlay' title='Recipe #2' subtitle={this.state.recipe2Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #2' subtitle={this.state.recipe2Name}/>}>
               <img className='recipeIMG' src={this.state.recipe2IMG}/>
             </CardMedia>
             <CardText>
@@ -82,7 +83,7 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlay={<CardTitle className='overlay' title='Recipe #3' subtitle={this.state.recipe3Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #3' subtitle={this.state.recipe3Name}/>}>
               <img className='recipeIMG' src={this.state.recipe3IMG}/>
             </CardMedia>
             <CardText>

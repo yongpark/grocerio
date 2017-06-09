@@ -37,7 +37,7 @@ class List extends Component{
         </div>
         <ul>
           <ListMenuContainer listId={listId}/>
-          
+          <RecipeContainer listId={listId}/>
         </ul>
       </div>
     );

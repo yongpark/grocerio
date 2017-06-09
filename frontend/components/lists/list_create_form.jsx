@@ -73,7 +73,7 @@ class ListCreateForm extends React.Component{
     return(
       <li className='list-box' onClick={this.show}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Card className="list-card">
+          <Card className="list-card-create">
             <CardTitle title="Create a new list..."  titleStyle={{ fontSize: '18px', color: grey50}}/>
           </Card>
         </MuiThemeProvider>
