@@ -85,8 +85,8 @@ Other frontend dependencies are:
 - React DOM
 - React Router
 - React History to manipulating the browser history
-- React Linked State Mixin
-- Babel for transpiling JSX into JavaScript.
+- React Linked State Mixing
+- Babel for compiling JSX into JavaScript.
 
 # Future Implementations
 
@@ -104,7 +104,7 @@ Users will be able to use this application on their mobile devices for on-the-fl
 Users will be able to search through their lists by name.
 
 ## Sharing
-Reap karma from shairing your profile page and how much money you saved.
+Reap karma from sharing your profile page and how much money you saved.
 
 ## Other Features
 

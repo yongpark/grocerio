@@ -5,8 +5,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Dialog, FlatButton, RaisedButton, TextField} from 'material-ui';
 import {lightBlue300} from 'material-ui/styles/colors';
-import {grey300} from 'material-ui/styles/colors';
+import {grey300, grey50} from 'material-ui/styles/colors';
 import Typist from 'react-typist';
+import {blueGrey600, blue700} from 'material-ui/styles/colors';
+
+const labelstyle={
+  fontWeight: 300,
+  color: blueGrey600
+};
 
 class SplashSessionForm extends React.Component{
   constructor(props){
@@ -57,35 +63,39 @@ class SplashSessionForm extends React.Component{
     if (this.state.splashFormType === "signup"){
       splashButtonName = "Sign Up";
       splashLinkText = "Log In";
-      guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin} labelStyle={{fontWeight: 400}}/>);
+      guestLogin = (<FlatButton label='Guest Login' onClick={this.handleGuestLogin} labelStyle={labelstyle}/>);
     }
     else {
       splashButtonName = "Log In";
       splashLinkText = "Sign Up";
-      guestLogin = (<FlatButton label='Guest Login' secondary={true} onClick={this.handleGuestLogin} labelStyle={{fontWeight: 400}}/>);
+      guestLogin = (<FlatButton label='Guest Login' onClick={this.handleGuestLogin} labelStyle={labelstyle}/>);
     }
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={splashButtonName} className="form" titleStyle={{fontWeight: 300, color: lightBlue300}}>
+          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={splashButtonName} className="dialog-form"
+            bodyStyle={{backgroundColor: grey50}} titleStyle={{backgroundColor: grey50, fontWeight: 300, color: blueGrey600}}>
             <form onSubmit={this.handleSubmit}>
               <TextField type="text" floatingLabelText="Username" hintText="Username" errorText={this.props.errors.username === undefined ? "" : `username ${this.props.errors.username.join(", ")}`} value={this.state.username}  onChange={this.update("username")} fullWidth={true}
-                inputStyle={{color: lightBlue300, }}
-                floatingLabelStyle={{color: lightBlue300}}
-                floatingLabelFocusStyle={{color: lightBlue300}}
-                hintStyle={{color: grey300}}/>
+                inputStyle={{color: blueGrey600, }}
+                floatingLabelStyle={{color: blueGrey600}}
+                floatingLabelFocusStyle={{color: blueGrey600}}
+                hintStyle={{color: grey300}}
+                underlineFocusStyle={{borderColor: blue700}}/>
               <br/>
               <TextField type="password" hintText="Password" floatingLabelText="Password" value={this.state.password} onChange={this.update("password")} fullWidth={true} errorText={this.props.errors.password === undefined ? "" :  this.props.errors.password.join(", ")}
-                inputStyle={{color: lightBlue300, }}
-                floatingLabelStyle={{color: lightBlue300}}
-                floatingLabelFocusStyle={{color: lightBlue300}}
-                hintStyle={{color: grey300}}/>
+                inputStyle={{color: blueGrey600, }}
+                floatingLabelStyle={{color: blueGrey600}}
+                floatingLabelFocusStyle={{color: blueGrey600}}
+                hintStyle={{color: grey300}}
+                underlineFocusStyle={{borderColor: blue700}}/>
               <br/>
-              <FlatButton label="Submit" type="submit" primary={true} labelStyle={{fontWeight: 300}}/>
+              <FlatButton label="Submit" type="submit" labelStyle={labelstyle}/>
             </form>
             <section>
               {guestLogin}
-              <FlatButton label={splashLinkText} secondary={true} onTouchTap={this.handleToggleFormType} labelStyle={{fontWeight: 400}}/>
+              <FlatButton label={splashLinkText}
+               onTouchTap={this.handleToggleFormType} labelStyle={labelstyle}/>
             </section>
           </Dialog>
         </MuiThemeProvider>
