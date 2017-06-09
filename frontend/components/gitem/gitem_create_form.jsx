@@ -9,6 +9,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import {Card, CardTitle} from 'material-ui/Card';
 import {grey50} from 'material-ui/styles/colors';
+import {lightBlue300, lightBlue400} from 'material-ui/styles/colors';
+import {blueGrey300, blueGrey600, blueGrey700} from 'material-ui/styles/colors';
+import {blueGrey900} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
 import moment from 'moment';
 
@@ -16,6 +19,15 @@ const labelstyle={
   fontWeight: 300,
   color: grey50
 };
+
+const muiTheme = getMuiTheme({
+  datePicker: {
+    selectColor: lightBlue400,
+  },
+   flatButton: {
+     primaryTextColor: lightBlue400,
+   }
+});
 
 class GItemCreateForm extends React.Component {
   constructor(props){
@@ -152,24 +164,34 @@ class GItemCreateForm extends React.Component {
        </MuiThemeProvider>
        <div className="list-create-container" ref='create2'>
          <form onSubmit={this.handleSubmit}>
-           <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-             <Card>
-               <CardTitle className="card-subtitle" title="Grocery Item" subtitle="Grocery Name" titleStyle={{ fontSize: 18, color: grey50 }}/>
+           <MuiThemeProvider muiTheme={muiTheme}>
+             <Card className='create-form'>
+               <CardTitle title="Grocery Item" subtitle="Add a new grocery item" titleStyle={{color: blueGrey900, fontSize: 18}} subtitleStyle={{color: blueGrey900}}/>
                  <TextField
                    id="titleinput"
                    type="text"
-                   placeholder="Add a Grocery Item"
+                   floatingLabelText="Grocery Item Name"
+                   hintText="Grocery Item Name"
+                   inputStyle={{paddingLeft: 5, paddingRight: 5, color: blueGrey900, width:'100%'}}
+                   floatingLabelStyle={{color: blueGrey600,  left: '5px'}}
+                   floatingLabelFocusStyle={{color: blueGrey600}}
+                   hintStyle={{color: blueGrey900}}
+                   underlineFocusStyle={{width: '200px', borderColor:blueGrey700}}
                    onChange={this.update('title')}
                    value={this.state.gitem.title}
+                   className='create-text-input'
                  />
                <DatePicker className="grocery-item-datepicker"
+               floatingLabelText="Expiration Date"
+               floatingLabelStyle={{color: blueGrey600,  left: '5px'}}
                onTouchTap={this.handleDatepickerOnShow}
                onChange={this.updateDate}
                ref="datePicker"
                value={this.state.gitem.expire_date ? new Date(this.state.gitem.expire_date) : null}
                onDismiss={this.handleDatepickerOnClose}
-               container="inline" mode="landscape"/>
-             <RaisedButton ref="button" type="submit" label="Save" labelStyle={labelstyle} backgroundColor="#78909C"/>
+               container="inline" mode="landscape"
+               underlineFocusStyle={{width: '200px', borderColor:blueGrey700}}/>
+             <RaisedButton ref="submit" type="submit" label="Save" backgroundColor="#263238" labelStyle={{fontWeight: 300, color: grey50}}/>
            </Card>
            </MuiThemeProvider>
          </form>

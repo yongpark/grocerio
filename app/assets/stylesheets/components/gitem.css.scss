@@ -16,6 +16,26 @@
   margin-left: 5px !important;
 }
 
+.gitem-index-item:hover{
+  background-color: #5D6E77 !important;
+}
+
+.create-form{
+  margin-top: -30px !important;
+  margin-left: 45px !important;
+  font-weight: 300 !important;
+  font-family: 'Roboto', 'san-serif' !important;
+  text-align: center !important;
+  position: relative !important;
+  border-radius: 3px !important;
+  background-color: #CFD8DC !important;
+  bottom: 80px !important;
+}
+
+.create-text-input:focus{
+  outline:none;
+}
+
 .gitem-create{
   border-radius: 3px !important;
   background-color: #778f9b !important;
@@ -23,6 +43,10 @@
   font-family: 'Roboto', 'san-serif' !important;
   width: 200px !important;
   margin-left: 5px !important;
+}
+
+.gitem-create:hover{
+  background-color: #5D6E77 !important;
 }
 
 .drop-target{
@@ -35,13 +59,13 @@
 }
 
 .gitem-edit-form{
+  text-align: center !important;
   position: relative !important;
   border-radius: 3px !important;
   background-color: #CFD8DC !important;
   font-weight: 300 !important;
   font-family: 'Roboto', 'san-serif' !important;
   bottom: 80px !important;
-  width: 200px !important;
   margin-left: 5px !important;
   margin-bottom: -217px !important;
 }
