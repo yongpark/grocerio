@@ -13,7 +13,7 @@ export const fetchRecipeIDs = ingredients => (
     success:function(data) {
       return data;
     },
-    error: function(err) { alert(err); },
+    error: function(err) { console.log(err); },
     beforeSend: function(xhr) {
     xhr.setRequestHeader("X-Mashape-Authorization", "OOjlmhc2mGmshoQHtCWTnKaEZx4pp1tO9Rnjsnct4kvZJAoBhn");
     }
@@ -32,7 +32,7 @@ export const fetchRecipes = id => (
     success:function(data) {
       return data;
     },
-    error: function(err) { alert(err); },
+    error: function(err) { console.log(err); },
     beforeSend: function(xhr) {
     xhr.setRequestHeader("X-Mashape-Authorization", "OOjlmhc2mGmshoQHtCWTnKaEZx4pp1tO9Rnjsnct4kvZJAoBhn");
     }

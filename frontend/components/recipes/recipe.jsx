@@ -7,7 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import moment from 'moment';
 import {fetchRecipesIDs, fetchRecipes} from '../../actions/spoonacular_api_actions';
-import {grey50,lightBlue600} from 'material-ui/styles/colors';
+import {grey50, blueGrey400, lightBlue600} from 'material-ui/styles/colors';
 
 class Recipe extends Component{
   constructor(props){
@@ -24,9 +24,9 @@ class Recipe extends Component{
     this.props.fetchList(this.props.listId)
     .then(() => this.props.fetchColumns(this.props.listId)).then(() => this.nearExpiration()).then(() => this.props.fetchRecipeIDs(this.state.ingredients.toString()).then((result) =>
     this.setState({recipeIDs: result.recipeIDs}))).then(() => this.getIDs()).then(() =>
-    this.props.fetchRecipes(this.state.recipeIDs[0].toString())).then((result) => this.setState({recipe1Name: result.recipes.title, recipe1Instructions: result.recipes.instructions})).then(() =>
-    this.props.fetchRecipes(this.state.recipeIDs[1].toString())).then((result) => this.setState({recipe2Name: result.recipes.title, recipe2Instructions: result.recipes.instructions})).then(() =>
-    this.props.fetchRecipes(this.state.recipeIDs[2].toString())).then((result) => this.setState({recipe3Name: result.recipes.title, recipe3Instructions: result.recipes.instructions}));
+    this.props.fetchRecipes(this.state.recipeIDs[0].toString())).then((result) => this.setState({recipe1Name: result.recipes.title, recipe1Instructions: result.recipes.instructions, recipe1Link: result.recipes.spoonacularSourceUrl})).then(() =>
+    this.props.fetchRecipes(this.state.recipeIDs[1].toString())).then((result) => this.setState({recipe2Name: result.recipes.title, recipe2Instructions: result.recipes.instructions, recipe2Link: result.recipes.spoonacularSourceUrl})).then(() =>
+    this.props.fetchRecipes(this.state.recipeIDs[2].toString())).then((result) => this.setState({recipe3Name: result.recipes.title, recipe3Instructions: result.recipes.instructions, recipe3Link: result.recipes.spoonacularSourceUrl}));
   }
 
   nearExpiration(){
@@ -63,7 +63,10 @@ class Recipe extends Component{
       <ul>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #1' subtitle={this.state.recipe1Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<a href={this.state.recipe1Link}><CardTitle className='overlay' title='Recipe #1' subtitle={this.state.recipe1Name}
+            titleStyle={{ color: grey50}}
+            subtitleStyle={{ color: grey50}}
+            /></a>}>
               <img className='recipeIMG' src={this.state.recipe1IMG}/>
             </CardMedia>
             <CardText>
@@ -73,7 +76,9 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #2' subtitle={this.state.recipe2Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<a href={this.state.recipe2Link}><CardTitle className='overlay' title='Recipe #2' subtitle={this.state.recipe2Name}
+            titleStyle={{ color: grey50}}
+            subtitleStyle={{ color: grey50}}/></a>}>
               <img className='recipeIMG' src={this.state.recipe2IMG}/>
             </CardMedia>
             <CardText>
@@ -83,7 +88,11 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<CardTitle className='overlay' title='Recipe #3' subtitle={this.state.recipe3Name}/>}>
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<a href={this.state.recipe3Link}><CardTitle className='overlay' title='Recipe #3'
+              subtitleStyle={{ color: grey50}}
+              titleStyle={{ color: grey50}}
+              subtitle={this.state.recipe3Name}
+              /></a>}>
               <img className='recipeIMG' src={this.state.recipe3IMG}/>
             </CardMedia>
             <CardText>

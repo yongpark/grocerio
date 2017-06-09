@@ -12,7 +12,7 @@ class Splash extends React.Component{
             Grocerio is a smart grocery list that saves you money
           </div>
           <div className="main-description">
-            Grocerio is a smart to-do list that recommends delicious meals before your expire, saving you money and helping you discover tasty new recipes!
+            Grocerio is a smart to-do list that recommends delicious meals before grocery items expire, saving you money and helping you discover tasty new recipes!
           </div>
           <SplashSessionButtonContainer/>
           <SplashSessionFormContainer/>
