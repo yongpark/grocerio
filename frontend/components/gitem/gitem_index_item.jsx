@@ -13,7 +13,7 @@ import {Card, CardTitle} from 'material-ui/Card';
 import merge from 'lodash/merge';
 import {grey50} from 'material-ui/styles/colors';
 import {lightBlue300} from 'material-ui/styles/colors';
-import {blueGrey300} from 'material-ui/styles/colors';
+import {blueGrey300, blueGrey600, blueGrey700} from 'material-ui/styles/colors';
 import {blueGrey900} from 'material-ui/styles/colors';
 import DatePicker from 'material-ui/DatePicker';
 import moment from 'moment';
@@ -175,7 +175,7 @@ class GItemIndexItem extends React.Component {
           <form onSubmit={this.handleSubmit} className="gitem-update" ref='gitemupdate'>
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
               <Card className='gitem-edit-form'>
-                <CardTitle title='Rename Grocery Item' titleStyle={{color: blueGrey900, fontSize: 18}} subtitleStyle={{color: blueGrey900}}/>
+                <CardTitle title='Edit Grocery Item' titleStyle={{color: blueGrey900, fontSize: 18}} subtitleStyle={{color: blueGrey900}}/>
                 <TextField
                   id="titleinput"
                   value={this.state.gitem.title}
@@ -183,17 +183,21 @@ class GItemIndexItem extends React.Component {
                   hintText="Grocery Item Name"
                   onChange={this.update('title')}
                   inputStyle={{paddingLeft: 5, paddingRight: 5, color: blueGrey900, width:'100%'}}
-                  floatingLabelStyle={{color: blueGrey900, left: '10px'}}
-                  floatingLabelFocusStyle={{color: blueGrey900}}
+                  floatingLabelStyle={{color: blueGrey600,  left: '5px'}}
+                  floatingLabelFocusStyle={{color: blueGrey600}}
                   hintStyle={{color: blueGrey900}}
-                  underlineStyle={{width: '200px', color:blueGrey900}}
+                  underlineFocusStyle={{width: '200px', borderColor:blueGrey700}}
                 />
-              <DatePicker className="grocery-item-datepicker2" onTouchTap={this.handleDatepicker2OnShow}
+              <DatePicker className="grocery-item-datepicker2"
+                floatingLabelText="Expiration Date"
+                floatingLabelStyle={{color: blueGrey600,  left: '5px'}}
+                onTouchTap={this.handleDatepicker2OnShow}
                 onChange={this.editDate}
                 onDismiss={this.handleDatepicker2OnClose}
                 defaultDate={this.formatDateString(this.state.gitem.expire_date)}
-                container="inline" mode="landscape"/>
-              <RaisedButton type="submit" label="update" backgroundColor="#263238" labelStyle={{fontWeight: 300, color: grey50}}/>
+                container="inline" mode="landscape"
+                underlineFocusStyle={{width: '200px', borderColor:blueGrey700}}/>
+              <RaisedButton type="submit" label="Update" backgroundColor="#263238" labelStyle={{fontWeight: 300, color: grey50}}/>
               </Card>
             </MuiThemeProvider>
           </form>

@@ -46,9 +46,9 @@
     display: inline-block;
   }
 
-  // .list-container-heading:hover{
-  //   background-color: #29B6F6;
-  // }
+  .list-container-heading:hover{
+    background-color: #ABACAB;
+  }
 
 .drag-drop-hint{
   position: absolute;
@@ -74,10 +74,10 @@
   margin-top: 20px;
   border-radius: 3px;
   text-decoration: none;
-  font-family: 'Roboto', 'san-serif';
+  font-weight: 300 !important;
+  font-family: 'Roboto', 'san-serif' !important;
   text-align: center;
-
-
+  background-color: #B0BEC5 !important;
   bottom: -15%;
   top: -1%;
   left: -1%;
