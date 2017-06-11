@@ -4,7 +4,7 @@
 
 Grocero is a Yong Park's a/A capstone project.
 
-![Grocero home page: http://www.grocero.com][home page]
+![Grocero][home page]
 
 ## Features
 
@@ -16,7 +16,7 @@ Grocero is a Yong Park's a/A capstone project.
 - Expired grocery items automatically move to the expired column.
 - Recipes are recommended based on items in the "Bought" column that are close to expiring.
 
-![List Page: https://grocero.herokuapp.com/#/lists][lists]
+![List Page][lists]
 
 ## Project Design
 
@@ -33,6 +33,8 @@ Grocero is a single-page application built on Rails and React.js with dependenci
 
 # Backend Technology
 Grocero runs on Ruby on Rails and is hosted on Heroku. The purpose of the backend is to provide RESTful APIs and respond with JSON-formatted data.
+
+![Recipes][recipes]
 
 ## Heroku
 NewRelic application performance management (APM) is used to automatically ping the Heroku dyno, allowing for faster response times.
@@ -117,3 +119,4 @@ Reap karma from sharing your profile page and how much money you saved.
 [lists]: ./docs/images/lists_page.png "Grocery List Page"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
+[recipes]: ./docs/images/recipes.png 

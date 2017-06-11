@@ -32,7 +32,7 @@ class Recipe extends Component{
   nearExpiration(){
     let ingredients = [];
     for (var i = 0; i < this.props.columns.length; i++) {
-      if (this.props.columns[i].title == "To Buy" || this.props.columns[i].title == "Bought"){
+      if (this.props.columns[i].title == "Bought"){
         for (var j = 0; j <   this.props.columns[i].gitems.length; j++) {
           let date = moment();
           var gitemdate = moment(this.props.columns[i].gitems[j].expire_date);

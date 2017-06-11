@@ -3,11 +3,11 @@ export const fetchRecipeIDs = ingredients => (
     type: 'GET',
     url: `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients`,
     data: {
-      fillingredients: 'true',
+      fillingredients: 'false',
       ingredients: `${ingredients}`,
       limitlicense: 'false',
       number: '3',
-      ranking: '2'
+      ranking: '1'
     },
     dataType: 'json',
     success:function(data) {
