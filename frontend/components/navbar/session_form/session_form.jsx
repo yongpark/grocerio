@@ -75,7 +75,7 @@ class SessionForm extends React.Component{
     return(
       <section>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={buttonName} bodyStyle={{color: lightBlue300}} className="dialog-form"
+          <Dialog open={this.props.authModalOpen} onRequestClose={this.props.closeAuthModal} modal={false} title={buttonName} className="dialog-form"
             bodyStyle={{backgroundColor: grey50}} titleStyle={{backgroundColor: grey50, fontWeight: 300, color: blueGrey600}}>
             <form onSubmit={this.handleSubmit}>
               <TextField type="text" floatingLabelText="Username" errorText={this.props.errors.username === undefined ? "" : `username ${this.props.errors.username.join(", ")}`} value={this.state.username}  onChange={this.update("username")} fullWidth={true}

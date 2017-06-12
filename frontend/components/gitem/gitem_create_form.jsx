@@ -71,7 +71,7 @@ class GItemCreateForm extends React.Component {
     }
 
    handleClickOutside(event) {
-     if (this.datepickerOpen) {
+     if (this.state.open) {
        return;
      }
      const domNode = ReactDOM.findDOMNode(this);
@@ -91,11 +91,13 @@ class GItemCreateForm extends React.Component {
    }
 
    hide(){
-     this.refs.create2.style.display = 'none';
-     this.setState({
-       show: false,
-       gitem: this.props.gitem
-     });
+     if (this.refs.create2 !== undefined){
+       this.refs.create2.style.display = 'none';
+       this.setState({
+         show: false,
+         gitem: this.props.gitem
+       });
+     }
    }
    //
   //  handleChange = (event, date) => {
@@ -117,22 +119,21 @@ class GItemCreateForm extends React.Component {
       let formattedDate = moment(date).format("YYYY-MM-DD");
       const gitem = merge({}, this.state.gitem, {expire_date: formattedDate});
       this.setState({gitem});
-     //  debugger;
     }
 
    handleSubmit(e){
      e.preventDefault();
      if(this.state.gitem){
-       this.props.createGItem(this.state.gitem).then(this.setState({gitem:this.initialState})).then(this.reset).then(this.clearDate).then(this.hide());
+       this.props.createGItem(this.state.gitem).then(this.setState({gitem:this.initialState})).then(this.reset).then(this.hide());
      }
    }
 
    handleDatepickerOnShow(e){
-     this.datepickerOpen = true;
+     this.setState({open: true});
    }
 
    handleDatepickerOnClose(e){
-     this.datepickerOpen = false;
+     this.setState({open: false});
    }
 
    formatDateString(date){
@@ -141,6 +142,8 @@ class GItemCreateForm extends React.Component {
      newDate.setHours(0, 0, 0, 0);
    }
 
+
+//code makes datepicker freeze. not sure why.
    clearDate (event) {
        // We manually reach into the composed component and set it's date to null.
        let newDate = null;
