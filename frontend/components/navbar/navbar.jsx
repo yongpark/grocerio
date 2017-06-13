@@ -23,14 +23,14 @@ function handleTouchTap() {
 class NavBar extends React.Component{
   constructor(props){
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(url){
-    hashHistory.push(url);
-  }
+  // handleClick(url){
+  //   hashHistory.push(url);
+  // }
 //add github icon to left side of navbar
   render(){
-    const handleClick = url => () => hashHistory.push(url);
+    // const handleClick = url => () => hashHistory.push(url);
     return(
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <AppBar onTitleTouchTap={handleTouchTap} className="navbar" title='Grocerio'

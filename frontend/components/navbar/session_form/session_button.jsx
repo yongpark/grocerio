@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {lightBlue300} from 'material-ui/styles/colors';
 import {grey50} from 'material-ui/styles/colors';
 import {blueGrey300} from 'material-ui/styles/colors';
+import { withRouter, hashHistory } from 'react-router';
 
 const style={
   height: '64px',
@@ -22,7 +23,13 @@ const labelstyle={
 class SessionButton extends React.Component{
   constructor(props){
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
   }
+
+  handleLogout() {
+    this.props.logout().then(() => this.props.router.push('/'));
+  }
+
 
   render(){
     if(this.props.session.currentUser){
@@ -35,7 +42,7 @@ class SessionButton extends React.Component{
               labelStyle={labelstyle}
               style={style}
               backgroundColor="#78909C"
-              onClick={this.props.logout}/>
+              onClick={this.handleLogout}/>
           </MuiThemeProvider>
         </div>
       );
@@ -55,4 +62,4 @@ class SessionButton extends React.Component{
   }
 }
 
-export default SessionButton;
+export default withRouter(SessionButton);

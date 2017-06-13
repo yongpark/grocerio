@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => {
     dispatch(logout());
-    hashHistory.push('/');
   },
   openAuthModal: () => dispatch(openAuthModal('signup'))
 });

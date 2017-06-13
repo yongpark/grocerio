@@ -9,10 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => {
-    dispatch(logout());
-    hashHistory.push('/');
-  },
+  logout: () => dispatch(logout()),
   openAuthModal: () => dispatch(openAuthModal('login'))
 });
 
