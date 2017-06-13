@@ -27,7 +27,7 @@ class SessionButton extends React.Component{
   }
 
   handleLogout() {
-    this.props.logout().then(() => this.props.router.push('/'));
+    this.props.logout().then(() => this.props.router.push("/"), e => { console.log(e); });
   }
 
 

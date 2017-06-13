@@ -1,10 +1,9 @@
-export const selectAllLists = ({lists, session}) =>  (
-  Object.keys(lists)
-    .map(key => lists[key])
-    .filter(
-      (list) => list.user_id === session.currentUser.id
-    )
-);
+export const selectAllLists = ({lists, session}) =>  {
+  if (session.currentUser) {
+    return (Object.keys(lists).map(key => lists[key])
+      .filter((list) => list.user_id === session.currentUser.id));
+  }
+};
 
 export const selectList = (state, listId) => {
   listId = parseInt(listId);
