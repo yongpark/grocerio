@@ -23,11 +23,12 @@
 }
 
 .list-container{
-  display: flex;
-  justify-content: space-between;
+  margin: 0px auto;
+  max-width: 100%;
   height: calc(100vh - 65px);
   overflow: auto;
   background-color: #E1E2E1;
+  display: flex;
 }
 
 .list-container-header{
@@ -36,7 +37,7 @@
   display: inline-block;
   position: relative;
   font-family: 'Roboto', 'san-serif';
-  width: 250px;
+  width: 100%;
 }
 
   .list-container-heading{
@@ -79,4 +80,12 @@
   top: -1%;
   left: -1%;
   right: -2%;
+}
+
+.list-index-left{
+  width: 75%;
+}
+
+.list-index-right{
+  width: 25%;
 }

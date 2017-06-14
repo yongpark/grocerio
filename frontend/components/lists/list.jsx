@@ -28,17 +28,20 @@ class List extends Component{
     const listId = this.props.params.listId;
     return (
       <div className="list-container">
-        <div>
+        <div className="list-index-left">
             <div className="list-container-header">
               <ListUpdateFormContainer listId={listId}/>
-              <div></div>
-                <ColumnIndexContainer listId={listId}/>
+                <div className="columns">
+                  <ColumnIndexContainer listId={listId}/>
+                </div>
             </div>
         </div>
-        <ul>
-          <ListMenuContainer listId={listId}/>
-          <RecipeContainer listId={listId}/>
-        </ul>
+        <div className="list-index-right">
+          <ul>
+            <ListMenuContainer listId={listId}/>
+            <RecipeContainer listId={listId}/>
+          </ul>
+        </div>
       </div>
     );
   }
