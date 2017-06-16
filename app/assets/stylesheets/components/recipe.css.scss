@@ -14,7 +14,29 @@
   height: 250px !important;
 }
 
+
 .overlay{
   font-weight: 300 !important;
   font-family: 'Roboto', 'san-serif' !important;
+  margin-top: -8px !important;
 }
+
+  .overlay:hover{
+    background-color: #0B76A7 !important;
+  }
+
+  a:link {
+      text-decoration: none;
+  }
+
+  a:visited {
+      text-decoration: none;
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  a:active {
+      text-decoration: underline;
+  }

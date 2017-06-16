@@ -88,7 +88,7 @@ class Recipe extends Component{
         </MuiThemeProvider>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Card className='recipe'>
-            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} overlay={<a href={this.state.recipe3Link}><CardTitle className='overlay' title='Recipe #3'
+            <CardMedia overlayContentStyle={{backgroundColor: lightBlue600, opacity: .9}} className='overlay'  overlay={<a href={this.state.recipe3Link}><CardTitle title='Recipe #3'
               subtitleStyle={{ color: grey50}}
               titleStyle={{ color: grey50}}
               subtitle={this.state.recipe3Name}
