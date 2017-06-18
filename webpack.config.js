@@ -8,7 +8,14 @@ module.exports = {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
   },
-  
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production')
+      }
+   }),
+    new webpack.optimize.UglifyJsPlugin()
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
