@@ -67,3 +67,45 @@ list2column4.gitems.create(title: 'yogurt', ord: 2)
 list2column4.gitems.create(title: 'onion', ord: 3)
 
 list3column1.gitems.create(title: 'risotto', ord: 1)
+list3column1.gitems.create(title: 'orecchiette', ord: 2)
+list3column1.gitems.create(title: 'steak', ord: 3)
+
+
+list3column2.gitems.create(title: 'jasmin rice', ord: 1, expire_date: DateTime.new(2017,month,day))
+list3column2.gitems.create(title: 'potatoes', ord: 2, expire_date: DateTime.new(2017,month,day))
+list3column2.gitems.create(title: 'lamb', ord: 3, expire_date: DateTime.new(2017,month,day))
+list3column2.gitems.create(title: 'asparagus', ord: 4, expire_date: DateTime.new(2017,month,day))
+list3column2.gitems.create(title: 'prawns', ord: 5, expire_date: DateTime.new(2017,month,day))
+list3column2.gitems.create(title: 'lemon', ord: 6, expire_date: DateTime.new(2017,month,day))
+
+list4column3.gitems.create(title: 'salmon', ord: 1)
+list4column3.gitems.create(title: 'clams', ord: 1)
+list4column3.gitems.create(title: 'veal', ord: 1)
+
+list3column4.gitems.create(title: 'peas', ord: 1)
+list3column4.gitems.create(title: 'pork', ord: 2)
+list3column4.gitems.create(title: 'linguine', ord: 3)
+list3column4.gitems.create(title: 'cauliflower', ord: 4)
+
+list2column4.gitems.create(title: 'ricotta cheese', ord: 1)
+list2column4.gitems.create(title: 'tomatoes', ord: 2)
+list2column4.gitems.create(title: 'cream', ord: 3)
+
+
+list4column1.gitems.create(title: 'kind bars', ord: 1)
+list4column1.gitems.create(title: 'bananas', ord: 2)
+list4column1.gitems.create(title: 'mini carrots', ord: 3)
+
+list4column2.gitems.create(title: 'sweet potatoes', ord: 1, expire_date: DateTime.new(2017,month,day))
+list4column2.gitems.create(title: 'kale chips', ord: 2)
+list4column2.gitems.create(title: 'turkey', ord: 3, expire_date: DateTime.new(2017,month,day))
+list4column2.gitems.create(title: 'lettuce', ord: 4, expire_date: DateTime.new(2017,month,day))
+list4column2.gitems.create(title: 'apples', ord: 5, expire_date: DateTime.new(2017,month,day))
+
+list4column3.gitems.create(title: 'celery', ord: 1)
+list4column3.gitems.create(title: 'strawberries', ord: 2)
+list4column3.gitems.create(title: 'almonds', ord: 3)
+
+list4column4.gitems.create(title: 'blueberries', ord: 1)
+list4column4.gitems.create(title: 'avocados', ord: 2)
+list4column4.gitems.create(title: 'watermelon', ord: 3)
