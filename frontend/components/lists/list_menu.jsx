@@ -22,7 +22,7 @@ const ListMenu = ({listId, deleteList, router}) => {
     <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
       <Card className="menu-card">
         <CardTitle title="List Menu" titleStyle={{color: blueGrey300, fontSize: 18}}/>
-        <RaisedButton className='list-menu-button' backgroundColor="#78909C" labelStyle={labelstyle} onClick={() => deleteList(listId)
+        <RaisedButton className='list-menu-button' backgroundColor="#ef5350" labelStyle={labelstyle} onClick={() => deleteList(listId)
           .then(router.push('/lists'))} label="Delete List" />
       </Card>
     </MuiThemeProvider>

@@ -65,6 +65,8 @@ class GItemIndexItem extends React.Component {
     this.handleDatepicker2OnShow = this.handleDatepicker2OnShow.bind(this);
     this.handleDatepicker2OnClose = this.handleDatepicker2OnClose.bind(this);
     this.formatDateString = this.formatDateString.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    console.log(this.props.gitem.id);
   }
 
   activate(active){
@@ -129,6 +131,11 @@ class GItemIndexItem extends React.Component {
       });
       this.setState({gitem});
     };
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    this.props.deleteGitem(this.props.gitem.id).then(this.hide());
   }
 
   handleSubmit(e) {
@@ -207,6 +214,7 @@ class GItemIndexItem extends React.Component {
                 defaultDate={this.formatDateString(this.state.gitem.expire_date)}
                 container="inline" mode="landscape"
                 underlineFocusStyle={{width: '200px', borderColor:blueGrey700}}/>
+              <RaisedButton onTouchTap={this.handleDelete} backgroundColor="#ef5350" labelStyle={{fontWeight: 300, color: grey50}} label="Delete"/>
               <RaisedButton type="submit" label="Update" backgroundColor="#263238" labelStyle={{fontWeight: 300, color: grey50}}/>
               </Card>
             </MuiThemeProvider>
