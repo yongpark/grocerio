@@ -11,7 +11,6 @@ class ListsIndex extends React.Component{
 
     render(){
       if (this.props.lists) {
-        console.log(ENV['mashape']);
         return(
           <section className="lists-index">
             <h2 className="lists-index-header">Your Grocery Lists</h2>
