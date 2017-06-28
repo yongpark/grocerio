@@ -30,7 +30,7 @@ class Api::GitemsController < ApplicationController
     if @gitem.update(gitem_params)
       render :show
     else
-      render json: @card.errors, status: 422
+      render json: @gitem.errors, status: 422
     end
   end
 

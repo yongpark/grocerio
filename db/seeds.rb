@@ -8,6 +8,10 @@
 
 month = Date.today.month
 day = Date.today.day + 7
+if day >= 30
+  difference = day - 30
+  day = difference
+end
 
 guest = User.create({username: 'guest', password: 'password'})
 list1 = guest.owned_lists.create({user_id: 1, title: "Breakfast Grocery list"})
